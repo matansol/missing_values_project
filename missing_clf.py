@@ -7,6 +7,21 @@ from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.utils import resample
 
+def remove_complitly_at_random(df: pd.DataFrame, feature_name: str, persentage: float) -> pd.DataFrame:
+    df = df.copy()
+    n = int(df.shape[0] * persentage)
+    df.loc[df.sample(n=n).index, feature_name] = None
+    return df
+
+def remove_at_random(df: pd.DataFrame, feature_name: str, persentage: float, missing_cond: callable) -> pd.DataFrame:
+    df = df.copy()
+    df.loc[missing_cond(df).sample(frac=persentage).index, feature_name] = None
+    return df
+
+def remove_not_at_random(df: pd.DataFrame, feature_name: str, persentage: float, missing_cond: callable, role_feature: str='Building Type'):
+    df = remove_at_random(df, feature_name, persentage, missing_cond)
+    return df.drop(columns=[role_feature])
+
 
 def classify_missing_values(missing_df, null_feature):
     # Create the None_indicator column
@@ -35,11 +50,11 @@ def classify_missing_values(missing_df, null_feature):
     # Create and train the logistic regression model
     # classifier = LogisticRegression(max_iter=1000)
     # Define the parameter grid for GridSearchCV
-    param_grid = {
-        'C': [0.01, 0.1, 1, 10, 100],
-        'penalty': ['l1', 'l2'],
-        'solver': ['liblinear', 'saga']
-    }
+    # linear_param_grid = {
+    #     'C': [0.01, 0.1, 1, 10, 100],
+    #     'penalty': ['l1', 'l2'],
+    #     'solver': ['liblinear', 'saga']
+    # }
     def mean_predicted_probability_scorer(estimator, X, y):
         # Get predicted probabilities for the positive class (class 1)
         probabilities = estimator.predict_proba(X)[:, 1]
@@ -48,21 +63,31 @@ def classify_missing_values(missing_df, null_feature):
 
 
     # Create a DecisionTreeClassifier
-    dt_classifier = LogisticRegression()
+    dt_classifier = RandomForestClassifier()
+
+    # Define the parameter grid for GridSearchCV
+    param_grid = {
+        'n_estimators': [50, 100, 200],
+        'max_depth': [None, 10, 20, 30],
+        'min_samples_split': [2, 5, 10],
+        'min_samples_leaf': [1, 2, 4],
+        'bootstrap': [True, False]
+    }
 
     # Create a GridSearchCV object
-    grid_search = GridSearchCV(estimator=dt_classifier, scoring=mean_probability_scorer, 
-                               param_grid=param_grid, cv=5, n_jobs=-1)
+    # grid_search = GridSearchCV(estimator=dt_classifier, scoring=mean_probability_scorer, 
+    #                            param_grid=param_grid, cv=5, n_jobs=-1)
 
+    # grid_search = GridSearchCV(estimator=dt_classifier, param_grid=param_grid, cv=5, n_jobs=2)
     # Fit the GridSearchCV object to the training data
-    grid_search.fit(X_train_clf, y_train_clf)
+    dt_classifier.fit(X_train_clf, y_train_clf)
 
     # Get the best estimator
-    classifier = grid_search.best_estimator_
+    # classifier = grid_search.best_estimator_
 
     # Make predictions
-    y_proba_clf = classifier.predict_proba(X_test_clf)
-    y_pred_clf = classifier.predict(X_test_clf)
+    y_proba_clf = dt_classifier.predict_proba(X_test_clf)
+    y_pred_clf = dt_classifier.predict(X_test_clf)
     
     # Evaluate the model
     accuracy_clf = accuracy_score(y_test_clf, y_pred_clf)
