@@ -62,24 +62,26 @@ def classify_missing_values(missing_df, null_feature):
     mean_probability_scorer = make_scorer(mean_predicted_probability_scorer, greater_is_better=True, needs_proba=True)
 
 
-    # Create a DecisionTreeClassifier
-    dt_classifier = RandomForestClassifier()
+    
+    
 
     # Define the parameter grid for GridSearchCV
-    param_grid = {
-        'n_estimators': [50, 100, 200],
-        'max_depth': [None, 10, 20, 30],
-        'min_samples_split': [2, 5, 10],
-        'min_samples_leaf': [1, 2, 4],
-        'bootstrap': [True, False]
-    }
+    # param_grid = {
+    #     'n_estimators': [50, 100, 200],
+    #     'max_depth': [None, 10, 20, 30],
+    #     'min_samples_split': [2, 5, 10],
+    #     'min_samples_leaf': [1, 2, 4],
+    #     'bootstrap': [True, False]
+    # }
 
     # Create a GridSearchCV object
     # grid_search = GridSearchCV(estimator=dt_classifier, scoring=mean_probability_scorer, 
     #                            param_grid=param_grid, cv=5, n_jobs=-1)
 
     # grid_search = GridSearchCV(estimator=dt_classifier, param_grid=param_grid, cv=5, n_jobs=2)
-    # Fit the GridSearchCV object to the training data
+    # Create a DecisionTreeClassifier
+    
+    dt_classifier = RandomForestClassifier()
     dt_classifier.fit(X_train_clf, y_train_clf)
 
     # Get the best estimator
@@ -100,12 +102,12 @@ def classify_missing_values(missing_df, null_feature):
     print("Classifier Classification Report:")
     print(class_report_clf)
 
-    at_random_threshold = 0.8
+    at_random_threshold = 0.7
     if accuracy_clf > at_random_threshold:
-        print('the missing values are probably at random')
+        print(f'classifier accuracy is {accuracy_clf} - MAR')
         
     else:
-        print('classifier is bad')
+        print(f'classifier accuracy is {accuracy_clf} - MCAR/MNAR')
 
     return accuracy_clf
 
