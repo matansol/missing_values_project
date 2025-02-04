@@ -19,6 +19,7 @@ def remove_at_random(df: pd.DataFrame, feature_name: str, persentage: float, mis
     return df
 
 def remove_not_at_random(df: pd.DataFrame, feature_name: str, persentage: float, missing_cond: callable, role_feature: str='Building Type'):
+    df = df.copy
     df = remove_at_random(df, feature_name, persentage, missing_cond)
     return df.drop(columns=[role_feature])
 
@@ -31,14 +32,19 @@ def classify_missing_values(missing_df, null_feature):
     df_majority = missing_df[missing_df['None_indicator'] == 0]
     df_minority = missing_df[missing_df['None_indicator'] == 1]
 
-    # Downsample the majority class
-    df_majority_downsampled = resample(df_majority, 
-                                    replace=False,    # sample without replacement
-                                    n_samples=len(df_minority),  # to match minority class
-                                    random_state=42)  # reproducible results
-
-    # Combine minority class with downsampled majority class
-    df_balanced = pd.concat([df_majority_downsampled, df_minority])
+    # Downsample the majority or minority class based on their sizes
+    if len(df_majority) > len(df_minority):
+        df_majority_downsampled = resample(df_majority, 
+                                           replace=False,    # sample without replacement
+                                           n_samples=len(df_minority),  # to match minority class
+                                           random_state=42)  # reproducible results
+        df_balanced = pd.concat([df_majority_downsampled, df_minority])
+    else:
+        df_minority_downsampled = resample(df_minority, 
+                                           replace=False,    # sample without replacement
+                                           n_samples=len(df_majority),  # to match majority class
+                                           random_state=42)  # reproducible results
+        df_balanced = pd.concat([df_majority, df_minority_downsampled])
 
     # Define the features and target variable for the classifier
     X_classifier = df_balanced.drop(columns=['None_indicator', null_feature])
@@ -60,10 +66,6 @@ def classify_missing_values(missing_df, null_feature):
         probabilities = estimator.predict_proba(X)[:, 1]
         return np.mean(probabilities)
     mean_probability_scorer = make_scorer(mean_predicted_probability_scorer, greater_is_better=True, needs_proba=True)
-
-
-    
-    
 
     # Define the parameter grid for GridSearchCV
     # param_grid = {
@@ -96,11 +98,11 @@ def classify_missing_values(missing_df, null_feature):
     conf_matrix_clf = confusion_matrix(y_test_clf, y_pred_clf)
     class_report_clf = classification_report(y_test_clf, y_pred_clf)
 
-    print(f"Classifier Accuracy: {accuracy_clf}")
-    print("Classifier Confusion Matrix:")
-    print(conf_matrix_clf)
-    print("Classifier Classification Report:")
-    print(class_report_clf)
+    # print(f"Classifier Accuracy: {accuracy_clf}")
+    # print("Classifier Confusion Matrix:")
+    # print(conf_matrix_clf)
+    # print("Classifier Classification Report:")
+    # print(class_report_clf)
 
     at_random_threshold = 0.7
     if accuracy_clf > at_random_threshold:
