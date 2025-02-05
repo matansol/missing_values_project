@@ -24,7 +24,7 @@ def remove_not_at_random(df: pd.DataFrame, feature_name: str, persentage: float,
     return df.drop(columns=[role_feature])
 
 
-def classify_missing_values(missing_df, null_feature):
+def classify_missing_values(missing_df, null_feature, seed=42):
     # Create the None_indicator column
     missing_df['None_indicator'] = missing_df[null_feature].isnull().astype(int)
 
@@ -37,13 +37,13 @@ def classify_missing_values(missing_df, null_feature):
         df_majority_downsampled = resample(df_majority, 
                                            replace=False,    # sample without replacement
                                            n_samples=len(df_minority),  # to match minority class
-                                           random_state=42)  # reproducible results
+                                           random_state=seed)  # reproducible results
         df_balanced = pd.concat([df_majority_downsampled, df_minority])
     else:
         df_minority_downsampled = resample(df_minority, 
                                            replace=False,    # sample without replacement
                                            n_samples=len(df_majority),  # to match majority class
-                                           random_state=42)  # reproducible results
+                                           random_state=seed)  # reproducible results
         df_balanced = pd.concat([df_majority, df_minority_downsampled])
 
     # Define the features and target variable for the classifier
@@ -51,7 +51,7 @@ def classify_missing_values(missing_df, null_feature):
     y_classifier = df_balanced['None_indicator']
 
     # Split the data into training and testing sets
-    X_train_clf, X_test_clf, y_train_clf, y_test_clf = train_test_split(X_classifier, y_classifier, test_size=0.3, random_state=42)
+    X_train_clf, X_test_clf, y_train_clf, y_test_clf = train_test_split(X_classifier, y_classifier, test_size=0.3, random_state=seed)
     print(X_train_clf.shape)
     # Create and train the logistic regression model
     # classifier = LogisticRegression(max_iter=1000)
