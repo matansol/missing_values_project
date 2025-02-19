@@ -209,47 +209,48 @@ class MissingnessParamsGenerator:
         self.current_experiment = 0
 
     def __iter__(self):
-        return self._iterator()
+        return self
 
-    def _iterator(self):
-        current_experiment = 0
-        while current_experiment < self.n_experiments:
-            mechanism = self.rng.choice(['MCAR', 'MAR', 'MNAR'])
-            _print(self.verbose, f"\n[Generator] Chosen missingness mechanism: {mechanism}")
+    def __next__(self):
+        if self.current_experiment >= self.n_experiments:
+            raise StopIteration
+            
+        mechanism = self.rng.choice(['MCAR', 'MAR', 'MNAR'])
+        _print(self.verbose, f"\n[Generator] Chosen missingness mechanism: {mechanism}")
 
-            if mechanism == 'MAR':
-                strategy = self.rng.choice(['basic', 'double_threshold', 'range_condition', 'nonlinear', 'logistic'])
-            elif mechanism == 'MNAR':
-                strategy = self.rng.choice(['basic', 'logistic'])
-            else:
-                strategy = "none"  # For MCAR, strategy is not used.
-            _print(self.verbose, f"[Generator] Chosen strategy for missingness: {strategy}")
+        if mechanism == 'MAR':
+            strategy = self.rng.choice(['basic', 'double_threshold', 'range_condition', 'nonlinear', 'logistic'])
+        elif mechanism == 'MNAR':
+            strategy = self.rng.choice(['basic', 'logistic'])
+        else:
+            strategy = "none"  # For MCAR, strategy is not used.
+        _print(self.verbose, f"[Generator] Chosen strategy for missingness: {strategy}")
 
-            target_feature = self.rng.choice(self.features)
-            _print(self.verbose, f"[Generator] Chosen feature for missingness: {target_feature}")
+        target_feature = self.rng.choice(self.features)
+        _print(self.verbose, f"[Generator] Chosen feature for missingness: {target_feature}")
 
-            missing_rate = self.rng.uniform(0.1, 0.9)
-            _print(self.verbose, f"[Generator] Chosen missing rate: {missing_rate:.2f}")
+        missing_rate = self.rng.uniform(0.1, 0.9)
+        _print(self.verbose, f"[Generator] Chosen missing rate: {missing_rate:.2f}")
 
-            if strategy == 'double_threshold':
-                condition_feature = self.rng.choice(self.features, size=2)
-            else:
-                condition_feature = self.rng.choice(self.features)
-            _print(self.verbose, f"[Generator] Chosen condition feature(s): {condition_feature}")
+        if strategy == 'double_threshold':
+            condition_feature = self.rng.choice(self.features, size=2)
+        else:
+            condition_feature = self.rng.choice(self.features)
+        _print(self.verbose, f"[Generator] Chosen condition feature(s): {condition_feature}")
 
-            random_state = int(self.rng.randint(0, 1000000))
-            _print(self.verbose, f"[Generator] Chosen random state: {random_state}")
+        random_state = int(self.rng.randint(0, 1000000))
+        _print(self.verbose, f"[Generator] Chosen random state: {random_state}")
 
-            self.current_experiment += 1
+        self.current_experiment += 1
 
-            yield MissingnessParams(
-                mechanism=mechanism,
-                strategy=strategy,
-                random_state=random_state,
-                target_feature=target_feature,
-                missing_rate=missing_rate,
-                condition_feature=condition_feature
-            )
+        return MissingnessParams(
+            mechanism=mechanism,
+            strategy=strategy,
+            random_state=random_state,
+            target_feature=target_feature,
+            missing_rate=missing_rate,
+            condition_feature=condition_feature
+        )
 
     def __len__(self):
         return self.n_experiments
