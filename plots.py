@@ -1,32 +1,67 @@
-
+import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-def plot_missingness_clasification(df):
-    df_agg = df[df['mechanism'] == 'MAR'].groupby(["mechanism", "strategy", "missing_rate"])["acc"].agg(["mean", "std"]).reset_index()
+def plot_all_missingness_classification(ds_names):
+    n_plots = len(ds_names)
+    fig, axes = plt.subplots(1, n_plots, figsize=(5 * n_plots, 4))
+    if n_plots == 1:
+        axes = [axes]
+    for ax, ds_name in zip(axes, ds_names):
+        df = pd.read_csv(f"{ds_name}_missing_clf_results.csv")
+        _plot_missingness_clasification(df, ax)
+        ax.set_title(ds_name)
+        ax.set_xlabel("Missing Rate")
+        ax.set_ylabel("Accuracy")
+        ax.set_title(ds_name)
+        ax.set_ylim(0.2, 1.05)
+        ax.grid(True)
+        ax.get_legend().remove()
+    fig.suptitle("Accuracy vs. Missing Rate for MAR and MCAR", fontsize=16)
+    handles, labels = ax.get_legend_handles_labels()
+    fig.legend(handles, labels, loc='lower center')
+    fig.savefig("images/missing_clf_results.pdf", format='pdf')
 
-    labels = list(df.apply(lambda x: f"{x['mechanism']} ({' '.join(x['strategy'].split('_'))})" 
-                        if x['mechanism'] == 'MAR' 
-                        else x['mechanism'], axis=1))
+def _plot_missingness_clasification(df, ax=None):
+    mcar_results = df[df.mechanism == 'MCAR']
+    mar_results = df[df.mechanism == 'MAR']
+    n_strategies = len(df.strategy.unique())
     # Plot with seaborn
-    plt.figure(figsize=(8, 6))
+    mar_results['legend_label'] = mar_results['strategy'].apply(lambda x: "MAR w/ "+x.replace('_', ' '))
     sns.lineplot(
-        data=df_agg, 
+        data=mar_results, 
         x="missing_rate", 
-        y="acc",
-        errorbar='sd',
-        hue=labels, 
+        y="acc", 
+        hue="legend_label", 
+        marker="o",
+        linestyle="-",
+        ax=ax
     )
-    plt.axhline(y=0.6, color='black', linestyle='--', label='Our Threshold')
 
+    sns.lineplot(
+        data=mcar_results, 
+        x="missing_rate", 
+        y="acc", 
+        marker="o",
+        linestyle="--",
+        color=sns.color_palette()[n_strategies],
+        label="MCAR",
+        ax=ax
+    )
+
+def plot_missingness_clasification(df, ds_name=None):
+    plt.figure(figsize=(8, 6))
+    
+    _plot_missingness_clasification(df)
+    
     # Formatting
     plt.xlabel("Missing Rate")
     plt.ylabel("Accuracy")
-    plt.title("Accuracy vs. Missing Rate for MAR and MCAR")
-    plt.ylim(0, 1)  # Ensure the y-axis stays within [0,1]
+    plt.title("Accuracy vs. Missing Rate for MAR and MCAR"+(" on "+ds_name if ds_name else ""))
     plt.legend(title="Strategy")
-    # plt.grid(True)
+    plt.ylim(0, 1.05)
+    plt.grid(True)
 
     # Show plot
     plt.show()

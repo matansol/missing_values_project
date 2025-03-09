@@ -1,0 +1,451 @@
+mechanism,strategy,random_state,target_feature,missing_rate,condition_feature,acc
+MAR,basic,576,alcohol,0.1,residual_sugar,0.8216704288939052
+MAR,double_threshold,576,alcohol,0.1,"['residual_sugar', 'chlorides']",0.9106382978723404
+MAR,range_condition,576,alcohol,0.1,residual_sugar,0.7725225225225225
+MAR,nonlinear,576,alcohol,0.1,residual_sugar,0.6646341463414634
+MCAR,none,576,alcohol,0.1,,0.49874476987447697
+MAR,basic,576,alcohol,0.2,residual_sugar,0.8335220838052095
+MAR,double_threshold,576,alcohol,0.2,"['residual_sugar', 'chlorides']",0.907563025210084
+MAR,range_condition,576,alcohol,0.2,residual_sugar,0.8395480225988701
+MAR,nonlinear,576,alcohol,0.2,residual_sugar,0.7269035532994924
+MCAR,none,576,alcohol,0.2,,0.511879949979158
+MAR,basic,576,alcohol,0.30000000000000004,residual_sugar,0.84
+MAR,double_threshold,576,alcohol,0.30000000000000004,"['residual_sugar', 'chlorides']",0.9015471167369902
+MAR,range_condition,576,alcohol,0.30000000000000004,residual_sugar,0.8369646882043577
+MAR,nonlinear,576,alcohol,0.30000000000000004,residual_sugar,0.7809973045822103
+MCAR,none,576,alcohol,0.30000000000000004,,0.5148107515085024
+MAR,basic,576,alcohol,0.4,residual_sugar,0.8437146092865232
+MAR,double_threshold,576,alcohol,0.4,"['residual_sugar', 'chlorides']",0.9414225941422594
+MAR,range_condition,576,alcohol,0.4,residual_sugar,0.8363329583802025
+MAR,nonlinear,576,alcohol,0.4,residual_sugar,0.7734414597060314
+MCAR,none,576,alcohol,0.4,,0.507459636215001
+MAR,basic,576,alcohol,0.5,residual_sugar,0.8511586452762924
+MAR,double_threshold,576,alcohol,0.5,"['residual_sugar', 'chlorides']",0.9294605809128631
+MAR,range_condition,576,alcohol,0.5,residual_sugar,0.8685258964143426
+MAR,nonlinear,576,alcohol,0.5,residual_sugar,0.8152
+MCAR,none,576,alcohol,0.5,,0.4924696356275304
+MAR,basic,576,alcohol,0.6000000000000001,residual_sugar,0.890481440646821
+MAR,double_threshold,576,alcohol,0.6000000000000001,"['residual_sugar', 'chlorides']",0.942347288949897
+MAR,range_condition,576,alcohol,0.6000000000000001,residual_sugar,0.8817086527929902
+MAR,nonlinear,576,alcohol,0.6000000000000001,residual_sugar,0.8421226104152933
+MCAR,none,576,alcohol,0.6000000000000001,,0.49318801089918257
+MAR,basic,576,alcohol,0.7000000000000001,residual_sugar,0.9064951364919988
+MAR,double_threshold,576,alcohol,0.7000000000000001,"['residual_sugar', 'chlorides']",0.958600583090379
+MAR,range_condition,576,alcohol,0.7000000000000001,residual_sugar,0.915861639139919
+MAR,nonlinear,576,alcohol,0.7000000000000001,residual_sugar,0.8681843732433951
+MCAR,none,576,alcohol,0.7000000000000001,,0.49525275853220424
+MAR,basic,576,alcohol,0.8,residual_sugar,0.9414513468938978
+MAR,double_threshold,576,alcohol,0.8,"['residual_sugar', 'chlorides']",0.9718237704918032
+MAR,range_condition,576,alcohol,0.8,residual_sugar,0.9365946980049193
+MAR,nonlinear,576,alcohol,0.8,residual_sugar,0.9056185312962051
+MCAR,none,576,alcohol,0.8,,0.5060975609756098
+MAR,basic,576,alcohol,0.9,residual_sugar,0.9707729468599033
+MAR,double_threshold,576,alcohol,0.9,"['residual_sugar', 'chlorides']",0.989237668161435
+MAR,range_condition,576,alcohol,0.9,residual_sugar,0.968059558117195
+MAR,nonlinear,576,alcohol,0.9,residual_sugar,0.9439982635120469
+MCAR,none,576,alcohol,0.9,,0.5160532498042286
+MAR,basic,791,chlorides,0.1,pH,0.7773512476007678
+MAR,double_threshold,791,chlorides,0.1,"['pH', 'sulphates']",0.8609756097560975
+MAR,range_condition,791,chlorides,0.1,pH,0.7947761194029851
+MAR,nonlinear,791,chlorides,0.1,pH,0.7773851590106007
+MCAR,none,791,chlorides,0.1,,0.496875
+MAR,basic,791,chlorides,0.2,pH,0.8205128205128205
+MAR,double_threshold,791,chlorides,0.2,"['pH', 'sulphates']",0.8540609137055838
+MAR,range_condition,791,chlorides,0.2,pH,0.8173076923076923
+MAR,nonlinear,791,chlorides,0.2,pH,0.8077617328519856
+MCAR,none,791,chlorides,0.2,,0.49386138613861386
+MAR,basic,791,chlorides,0.30000000000000004,pH,0.8214756258234519
+MAR,double_threshold,791,chlorides,0.30000000000000004,"['pH', 'sulphates']",0.8668913226621735
+MAR,range_condition,791,chlorides,0.30000000000000004,pH,0.8303341902313625
+MAR,nonlinear,791,chlorides,0.30000000000000004,pH,0.8160919540229885
+MCAR,none,791,chlorides,0.30000000000000004,,0.5169312169312169
+MAR,basic,791,chlorides,0.4,pH,0.8470993117010817
+MAR,double_threshold,791,chlorides,0.4,"['pH', 'sulphates']",0.8737562189054726
+MAR,range_condition,791,chlorides,0.4,pH,0.8418782942022042
+MAR,nonlinear,791,chlorides,0.4,pH,0.8172382671480144
+MCAR,none,791,chlorides,0.4,,0.4997048986818808
+MAR,basic,791,chlorides,0.5,pH,0.8590604026845637
+MAR,double_threshold,791,chlorides,0.5,"['pH', 'sulphates']",0.9024512256128064
+MAR,range_condition,791,chlorides,0.5,pH,0.8452932098765432
+MAR,nonlinear,791,chlorides,0.5,pH,0.8370827285921626
+MCAR,none,791,chlorides,0.5,,0.50943094629156
+MAR,basic,791,chlorides,0.6000000000000001,pH,0.8846662260409782
+MAR,double_threshold,791,chlorides,0.6000000000000001,"['pH', 'sulphates']",0.9085953878406708
+MAR,range_condition,791,chlorides,0.6000000000000001,pH,0.8728211749515816
+MAR,nonlinear,791,chlorides,0.6000000000000001,pH,0.8657351154313487
+MCAR,none,791,chlorides,0.6000000000000001,,0.5094715852442672
+MAR,basic,791,chlorides,0.7000000000000001,pH,0.9053321927573424
+MAR,double_threshold,791,chlorides,0.7000000000000001,"['pH', 'sulphates']",0.9327062228654125
+MAR,range_condition,791,chlorides,0.7000000000000001,pH,0.9061281337047353
+MAR,nonlinear,791,chlorides,0.7000000000000001,pH,0.8961004972520282
+MCAR,none,791,chlorides,0.7000000000000001,,0.4995990376904571
+MAR,basic,791,chlorides,0.8,pH,0.9324799196787149
+MAR,double_threshold,791,chlorides,0.8,"['pH', 'sulphates']",0.9546751188589541
+MAR,range_condition,791,chlorides,0.8,pH,0.9379293424926398
+MAR,nonlinear,791,chlorides,0.8,pH,0.9229707978845711
+MCAR,none,791,chlorides,0.8,,0.5190993164455167
+MAR,basic,791,chlorides,0.9,pH,0.9701994174322205
+MAR,double_threshold,791,chlorides,0.9,"['pH', 'sulphates']",0.9754376058723885
+MAR,range_condition,791,chlorides,0.9,pH,0.9616732369689006
+MAR,nonlinear,791,chlorides,0.9,pH,0.9645055395978662
+MCAR,none,791,chlorides,0.9,,0.5083798882681564
+MAR,basic,287,fixed_acidity,0.1,sulphates,0.7697368421052632
+MAR,double_threshold,287,fixed_acidity,0.1,"['sulphates', 'total_sulfur_dioxide']",0.908
+MAR,range_condition,287,fixed_acidity,0.1,sulphates,0.8308026030368764
+MAR,nonlinear,287,fixed_acidity,0.1,sulphates,0.6302895322939867
+MCAR,none,287,fixed_acidity,0.1,,0.5051958433253397
+MAR,basic,287,fixed_acidity,0.2,sulphates,0.7766582703610412
+MAR,double_threshold,287,fixed_acidity,0.2,"['sulphates', 'total_sulfur_dioxide']",0.8830897703549061
+MAR,range_condition,287,fixed_acidity,0.2,sulphates,0.8555555555555555
+MAR,nonlinear,287,fixed_acidity,0.2,sulphates,0.6372328458942632
+MCAR,none,287,fixed_acidity,0.2,,0.514218009478673
+MAR,basic,287,fixed_acidity,0.30000000000000004,sulphates,0.7670928293496387
+MAR,double_threshold,287,fixed_acidity,0.30000000000000004,"['sulphates', 'total_sulfur_dioxide']",0.9453551912568307
+MAR,range_condition,287,fixed_acidity,0.30000000000000004,sulphates,0.8552631578947368
+MAR,nonlinear,287,fixed_acidity,0.30000000000000004,sulphates,0.6675392670157068
+MCAR,none,287,fixed_acidity,0.30000000000000004,,0.510498687664042
+MAR,basic,287,fixed_acidity,0.4,sulphates,0.7975742367210372
+MAR,double_threshold,287,fixed_acidity,0.4,"['sulphates', 'total_sulfur_dioxide']",0.922920892494929
+MAR,range_condition,287,fixed_acidity,0.4,sulphates,0.8595814977973568
+MAR,nonlinear,287,fixed_acidity,0.4,sulphates,0.6633775021144629
+MCAR,none,287,fixed_acidity,0.4,,0.5009858044164038
+MAR,basic,287,fixed_acidity,0.5,sulphates,0.8252361673414305
+MAR,double_threshold,287,fixed_acidity,0.5,"['sulphates', 'total_sulfur_dioxide']",0.942339373970346
+MAR,range_condition,287,fixed_acidity,0.5,sulphates,0.881858407079646
+MAR,nonlinear,287,fixed_acidity,0.5,sulphates,0.7086936731907146
+MCAR,none,287,fixed_acidity,0.5,,0.49158195679796696
+MAR,basic,287,fixed_acidity,0.6000000000000001,sulphates,0.8580609108689579
+MAR,double_threshold,287,fixed_acidity,0.6000000000000001,"['sulphates', 'total_sulfur_dioxide']",0.954639175257732
+MAR,range_condition,287,fixed_acidity,0.6000000000000001,sulphates,0.8985347985347986
+MAR,nonlinear,287,fixed_acidity,0.6000000000000001,sulphates,0.7243856332703213
+MCAR,none,287,fixed_acidity,0.6000000000000001,,0.5052083333333334
+MAR,basic,287,fixed_acidity,0.7000000000000001,sulphates,0.878963931251513
+MAR,double_threshold,287,fixed_acidity,0.7000000000000001,"['sulphates', 'total_sulfur_dioxide']",0.9566250742721331
+MAR,range_condition,287,fixed_acidity,0.7000000000000001,sulphates,0.9215624007621467
+MAR,nonlinear,287,fixed_acidity,0.7000000000000001,sulphates,0.7655486812113318
+MCAR,none,287,fixed_acidity,0.7000000000000001,,0.49893955461293743
+MAR,basic,287,fixed_acidity,0.8,sulphates,0.9137529137529138
+MAR,double_threshold,287,fixed_acidity,0.8,"['sulphates', 'total_sulfur_dioxide']",0.9823468328141225
+MAR,range_condition,287,fixed_acidity,0.8,sulphates,0.9428969359331476
+MAR,nonlinear,287,fixed_acidity,0.8,sulphates,0.8184427700035881
+MCAR,none,287,fixed_acidity,0.8,,0.49443118536197295
+MAR,basic,287,fixed_acidity,0.9,sulphates,0.9589426321709786
+MAR,double_threshold,287,fixed_acidity,0.9,"['sulphates', 'total_sulfur_dioxide']",0.987563334868724
+MAR,range_condition,287,fixed_acidity,0.9,sulphates,0.9796018677807815
+MAR,nonlinear,287,fixed_acidity,0.9,sulphates,0.8968629136226901
+MCAR,none,287,fixed_acidity,0.9,,0.5012285012285013
+MAR,basic,55,pH,0.1,chlorides,0.5971143174250833
+MAR,double_threshold,55,pH,0.1,"['chlorides', 'total_sulfur_dioxide']",0.763302752293578
+MAR,range_condition,55,pH,0.1,chlorides,0.6920943134535368
+MAR,nonlinear,55,pH,0.1,chlorides,0.6195876288659794
+MCAR,none,55,pH,0.1,,0.4855769230769231
+MAR,basic,55,pH,0.2,chlorides,0.6286701208981001
+MAR,double_threshold,55,pH,0.2,"['chlorides', 'total_sulfur_dioxide']",0.7940074906367042
+MAR,range_condition,55,pH,0.2,chlorides,0.7096085409252669
+MAR,nonlinear,55,pH,0.2,chlorides,0.5984168865435356
+MCAR,none,55,pH,0.2,,0.5211210398050365
+MAR,basic,55,pH,0.30000000000000004,chlorides,0.6559755631920581
+MAR,double_threshold,55,pH,0.30000000000000004,"['chlorides', 'total_sulfur_dioxide']",0.8128109452736318
+MAR,range_condition,55,pH,0.30000000000000004,chlorides,0.7294617563739377
+MAR,nonlinear,55,pH,0.30000000000000004,chlorides,0.6415620641562064
+MCAR,none,55,pH,0.30000000000000004,,0.5229946524064171
+MAR,basic,55,pH,0.4,chlorides,0.6787947697555429
+MAR,double_threshold,55,pH,0.4,"['chlorides', 'total_sulfur_dioxide']",0.8079226163058498
+MAR,range_condition,55,pH,0.4,chlorides,0.736140350877193
+MAR,nonlinear,55,pH,0.4,chlorides,0.6307612635939928
+MCAR,none,55,pH,0.4,,0.4855778794509648
+MAR,basic,55,pH,0.5,chlorides,0.691609977324263
+MAR,double_threshold,55,pH,0.5,"['chlorides', 'total_sulfur_dioxide']",0.8452816386247257
+MAR,range_condition,55,pH,0.5,chlorides,0.7683096630465052
+MAR,nonlinear,55,pH,0.5,chlorides,0.6457556935817805
+MCAR,none,55,pH,0.5,,0.5040715312150726
+MAR,basic,55,pH,0.6000000000000001,chlorides,0.7208907341007738
+MAR,double_threshold,55,pH,0.6000000000000001,"['chlorides', 'total_sulfur_dioxide']",0.8588807785888077
+MAR,range_condition,55,pH,0.6000000000000001,chlorides,0.7956018518518518
+MAR,nonlinear,55,pH,0.6000000000000001,chlorides,0.6690783807062877
+MCAR,none,55,pH,0.6000000000000001,,0.5069813176007866
+MAR,basic,55,pH,0.7000000000000001,chlorides,0.7608625683939492
+MAR,double_threshold,55,pH,0.7000000000000001,"['chlorides', 'total_sulfur_dioxide']",0.8907823392718822
+MAR,range_condition,55,pH,0.7000000000000001,chlorides,0.8335628565807593
+MAR,nonlinear,55,pH,0.7000000000000001,chlorides,0.7072538860103627
+MCAR,none,55,pH,0.7000000000000001,,0.5163000265041081
+MAR,basic,55,pH,0.8,chlorides,0.8141609028030579
+MAR,double_threshold,55,pH,0.8,"['chlorides', 'total_sulfur_dioxide']",0.9184276300840718
+MAR,range_condition,55,pH,0.8,chlorides,0.8719585849870578
+MAR,nonlinear,55,pH,0.8,chlorides,0.7666527893422148
+MCAR,none,55,pH,0.8,,0.49305279872965463
+MAR,basic,55,pH,0.9,chlorides,0.8936862660013019
+MAR,double_threshold,55,pH,0.9,"['chlorides', 'total_sulfur_dioxide']",0.9627906976744186
+MAR,range_condition,55,pH,0.9,chlorides,0.9293576474453754
+MAR,nonlinear,55,pH,0.9,chlorides,0.8532637075718016
+MCAR,none,55,pH,0.9,,0.5059665871121718
+MAR,basic,231,fixed_acidity,0.1,citric_acid,0.8295739348370927
+MAR,double_threshold,231,fixed_acidity,0.1,"['citric_acid', 'sulphates']",0.9135338345864662
+MAR,range_condition,231,fixed_acidity,0.1,citric_acid,0.7624309392265194
+MAR,nonlinear,231,fixed_acidity,0.1,citric_acid,0.8607888631090487
+MCAR,none,231,fixed_acidity,0.1,,0.4900556881463803
+MAR,basic,231,fixed_acidity,0.2,citric_acid,0.8491048593350383
+MAR,double_threshold,231,fixed_acidity,0.2,"['citric_acid', 'sulphates']",0.9130434782608695
+MAR,range_condition,231,fixed_acidity,0.2,citric_acid,0.7932011331444759
+MAR,nonlinear,231,fixed_acidity,0.2,citric_acid,0.8267622461170848
+MCAR,none,231,fixed_acidity,0.2,,0.5095693779904307
+MAR,basic,231,fixed_acidity,0.30000000000000004,citric_acid,0.8509737510584251
+MAR,double_threshold,231,fixed_acidity,0.30000000000000004,"['citric_acid', 'sulphates']",0.9079118028534371
+MAR,range_condition,231,fixed_acidity,0.30000000000000004,citric_acid,0.798361688720857
+MAR,nonlinear,231,fixed_acidity,0.30000000000000004,citric_acid,0.8608695652173913
+MCAR,none,231,fixed_acidity,0.30000000000000004,,0.5005321979776477
+MAR,basic,231,fixed_acidity,0.4,citric_acid,0.8647619047619047
+MAR,double_threshold,231,fixed_acidity,0.4,"['citric_acid', 'sulphates']",0.9190751445086706
+MAR,range_condition,231,fixed_acidity,0.4,citric_acid,0.8113207547169812
+MAR,nonlinear,231,fixed_acidity,0.4,citric_acid,0.8576512455516014
+MCAR,none,231,fixed_acidity,0.4,,0.5065606361829026
+MAR,basic,231,fixed_acidity,0.5,citric_acid,0.8924144769459593
+MAR,double_threshold,231,fixed_acidity,0.5,"['citric_acid', 'sulphates']",0.9280847842543528
+MAR,range_condition,231,fixed_acidity,0.5,citric_acid,0.8474325821943111
+MAR,nonlinear,231,fixed_acidity,0.5,citric_acid,0.8658932714617169
+MCAR,none,231,fixed_acidity,0.5,,0.490743696137887
+MAR,basic,231,fixed_acidity,0.6000000000000001,citric_acid,0.9078131459280695
+MAR,double_threshold,231,fixed_acidity,0.6000000000000001,"['citric_acid', 'sulphates']",0.9498730964467005
+MAR,range_condition,231,fixed_acidity,0.6000000000000001,citric_acid,0.8624923265807244
+MAR,nonlinear,231,fixed_acidity,0.6000000000000001,citric_acid,0.8967916505604948
+MCAR,none,231,fixed_acidity,0.6000000000000001,,0.5
+MAR,basic,231,fixed_acidity,0.7000000000000001,citric_acid,0.9251844046364595
+MAR,double_threshold,231,fixed_acidity,0.7000000000000001,"['citric_acid', 'sulphates']",0.9589114194236926
+MAR,range_condition,231,fixed_acidity,0.7000000000000001,citric_acid,0.8951633986928105
+MAR,nonlinear,231,fixed_acidity,0.7000000000000001,citric_acid,0.9195930423367247
+MCAR,none,231,fixed_acidity,0.7000000000000001,,0.5078082929456113
+MAR,basic,231,fixed_acidity,0.8,citric_acid,0.9547553093259464
+MAR,double_threshold,231,fixed_acidity,0.8,"['citric_acid', 'sulphates']",0.9738805970149254
+MAR,range_condition,231,fixed_acidity,0.8,citric_acid,0.9309791332263242
+MAR,nonlinear,231,fixed_acidity,0.8,citric_acid,0.9462180040264596
+MCAR,none,231,fixed_acidity,0.8,,0.5210355987055016
+MAR,basic,231,fixed_acidity,0.9,citric_acid,0.9807427785419532
+MAR,double_threshold,231,fixed_acidity,0.9,"['citric_acid', 'sulphates']",0.9845769070446019
+MAR,range_condition,231,fixed_acidity,0.9,citric_acid,0.9606879606879607
+MAR,nonlinear,231,fixed_acidity,0.9,citric_acid,0.9761477301872274
+MCAR,none,231,fixed_acidity,0.9,,0.5257985257985258
+MAR,basic,952,residual_sugar,0.1,alcohol,0.6399108138238573
+MAR,double_threshold,952,residual_sugar,0.1,"['alcohol', 'density']",0.9137931034482759
+MAR,range_condition,952,residual_sugar,0.1,alcohol,0.7586837294332724
+MAR,nonlinear,952,residual_sugar,0.1,alcohol,0.6489988221436984
+MCAR,none,952,residual_sugar,0.1,,0.4996186117467582
+MAR,basic,952,residual_sugar,0.2,alcohol,0.6414228341939185
+MAR,double_threshold,952,residual_sugar,0.2,"['alcohol', 'density']",0.9387186629526463
+MAR,range_condition,952,residual_sugar,0.2,alcohol,0.8007448789571695
+MAR,nonlinear,952,residual_sugar,0.2,alcohol,0.6729828850855746
+MCAR,none,952,residual_sugar,0.2,,0.48361626529806556
+MAR,basic,952,residual_sugar,0.30000000000000004,alcohol,0.6664125047655356
+MAR,double_threshold,952,residual_sugar,0.30000000000000004,"['alcohol', 'density']",0.9361702127659575
+MAR,range_condition,952,residual_sugar,0.30000000000000004,alcohol,0.8310727496917386
+MAR,nonlinear,952,residual_sugar,0.30000000000000004,alcohol,0.681965881397238
+MCAR,none,952,residual_sugar,0.30000000000000004,,0.49464332375228637
+MAR,basic,952,residual_sugar,0.4,alcohol,0.6856235565819861
+MAR,double_threshold,952,residual_sugar,0.4,"['alcohol', 'density']",0.9635135135135136
+MAR,range_condition,952,residual_sugar,0.4,alcohol,0.8322368421052632
+MAR,nonlinear,952,residual_sugar,0.4,alcohol,0.7193956213382671
+MCAR,none,952,residual_sugar,0.4,,0.5041257367387033
+MAR,basic,952,residual_sugar,0.5,alcohol,0.7061677061677062
+MAR,double_threshold,952,residual_sugar,0.5,"['alcohol', 'density']",0.9527389903329753
+MAR,range_condition,952,residual_sugar,0.5,alcohol,0.8599324070597071
+MAR,nonlinear,952,residual_sugar,0.5,alcohol,0.7372713791398913
+MCAR,none,952,residual_sugar,0.5,,0.501123595505618
+MAR,basic,952,residual_sugar,0.6000000000000001,alcohol,0.7403753143741536
+MAR,double_threshold,952,residual_sugar,0.6000000000000001,"['alcohol', 'density']",0.9626334519572953
+MAR,range_condition,952,residual_sugar,0.6000000000000001,alcohol,0.871585557299843
+MAR,nonlinear,952,residual_sugar,0.6000000000000001,alcohol,0.7623578076525336
+MCAR,none,952,residual_sugar,0.6000000000000001,,0.49387918924342766
+MAR,basic,952,residual_sugar,0.7000000000000001,alcohol,0.78156146179402
+MAR,double_threshold,952,residual_sugar,0.7000000000000001,"['alcohol', 'density']",0.9693251533742331
+MAR,range_condition,952,residual_sugar,0.7000000000000001,alcohol,0.9020827698133622
+MAR,nonlinear,952,residual_sugar,0.7000000000000001,alcohol,0.8050426136363636
+MCAR,none,952,residual_sugar,0.7000000000000001,,0.5061497326203208
+MAR,basic,952,residual_sugar,0.8,alcohol,0.830090340514246
+MAR,double_threshold,952,residual_sugar,0.8,"['alcohol', 'density']",0.9745137491616365
+MAR,range_condition,952,residual_sugar,0.8,alcohol,0.932001902044698
+MAR,nonlinear,952,residual_sugar,0.8,alcohol,0.847457627118644
+MCAR,none,952,residual_sugar,0.8,,0.5047581284694687
+MAR,basic,952,residual_sugar,0.9,alcohol,0.9096091205211726
+MAR,double_threshold,952,residual_sugar,0.9,"['alcohol', 'density']",0.9928528886241811
+MAR,range_condition,952,residual_sugar,0.9,alcohol,0.9647483542153323
+MAR,nonlinear,952,residual_sugar,0.9,alcohol,0.9164510166358595
+MCAR,none,952,residual_sugar,0.9,,0.5007949125596184
+MAR,basic,16,free_sulfur_dioxide,0.1,alcohol,0.6820143884892086
+MAR,double_threshold,16,free_sulfur_dioxide,0.1,"['alcohol', 'fixed_acidity']",0.8609467455621301
+MAR,range_condition,16,free_sulfur_dioxide,0.1,alcohol,0.7779751332149201
+MAR,nonlinear,16,free_sulfur_dioxide,0.1,alcohol,0.8022727272727272
+MCAR,none,16,free_sulfur_dioxide,0.1,,0.5147881694644284
+MAR,basic,16,free_sulfur_dioxide,0.2,alcohol,0.6896057347670251
+MAR,double_threshold,16,free_sulfur_dioxide,0.2,"['alcohol', 'fixed_acidity']",0.877643504531722
+MAR,range_condition,16,free_sulfur_dioxide,0.2,alcohol,0.7608695652173914
+MAR,nonlinear,16,free_sulfur_dioxide,0.2,alcohol,0.8387458006718925
+MCAR,none,16,free_sulfur_dioxide,0.2,,0.5263578274760383
+MAR,basic,16,free_sulfur_dioxide,0.30000000000000004,alcohol,0.7331719128329298
+MAR,double_threshold,16,free_sulfur_dioxide,0.30000000000000004,"['alcohol', 'fixed_acidity']",0.8904810644831116
+MAR,range_condition,16,free_sulfur_dioxide,0.30000000000000004,alcohol,0.8002336448598131
+MAR,nonlinear,16,free_sulfur_dioxide,0.30000000000000004,alcohol,0.8487584650112867
+MCAR,none,16,free_sulfur_dioxide,0.30000000000000004,,0.5060532687651331
+MAR,basic,16,free_sulfur_dioxide,0.4,alcohol,0.7671480144404332
+MAR,double_threshold,16,free_sulfur_dioxide,0.4,"['alcohol', 'fixed_acidity']",0.8954650269023828
+MAR,range_condition,16,free_sulfur_dioxide,0.4,alcohol,0.8124452234881683
+MAR,nonlinear,16,free_sulfur_dioxide,0.4,alcohol,0.8564946114577425
+MCAR,none,16,free_sulfur_dioxide,0.4,,0.5107710891886451
+MAR,basic,16,free_sulfur_dioxide,0.5,alcohol,0.7755160550458715
+MAR,double_threshold,16,free_sulfur_dioxide,0.5,"['alcohol', 'fixed_acidity']",0.9206060606060606
+MAR,range_condition,16,free_sulfur_dioxide,0.5,alcohol,0.8218510786360473
+MAR,nonlinear,16,free_sulfur_dioxide,0.5,alcohol,0.8724741805118994
+MCAR,none,16,free_sulfur_dioxide,0.5,,0.497283477149249
+MAR,basic,16,free_sulfur_dioxide,0.6000000000000001,alcohol,0.7932761087267525
+MAR,double_threshold,16,free_sulfur_dioxide,0.6000000000000001,"['alcohol', 'fixed_acidity']",0.929904185577408
+MAR,range_condition,16,free_sulfur_dioxide,0.6000000000000001,alcohol,0.8512420566146736
+MAR,nonlinear,16,free_sulfur_dioxide,0.6000000000000001,alcohol,0.9018290406868235
+MCAR,none,16,free_sulfur_dioxide,0.6000000000000001,,0.5011783189316575
+MAR,basic,16,free_sulfur_dioxide,0.7000000000000001,alcohol,0.833843641559502
+MAR,double_threshold,16,free_sulfur_dioxide,0.7000000000000001,"['alcohol', 'fixed_acidity']",0.9466207490314249
+MAR,range_condition,16,free_sulfur_dioxide,0.7000000000000001,alcohol,0.8838533927686973
+MAR,nonlinear,16,free_sulfur_dioxide,0.7000000000000001,alcohol,0.9202551834130781
+MCAR,none,16,free_sulfur_dioxide,0.7000000000000001,,0.5006525711302532
+MAR,basic,16,free_sulfur_dioxide,0.8,alcohol,0.8692020614892483
+MAR,double_threshold,16,free_sulfur_dioxide,0.8,"['alcohol', 'fixed_acidity']",0.9724424311060778
+MAR,range_condition,16,free_sulfur_dioxide,0.8,alcohol,0.9093459961148284
+MAR,nonlinear,16,free_sulfur_dioxide,0.8,alcohol,0.9449566918133557
+MCAR,none,16,free_sulfur_dioxide,0.8,,0.4878335949764521
+MAR,basic,16,free_sulfur_dioxide,0.9,alcohol,0.9348659003831418
+MAR,double_threshold,16,free_sulfur_dioxide,0.9,"['alcohol', 'fixed_acidity']",0.9859578736208626
+MAR,range_condition,16,free_sulfur_dioxide,0.9,alcohol,0.9509860233582232
+MAR,nonlinear,16,free_sulfur_dioxide,0.9,alcohol,0.9732474609858806
+MCAR,none,16,free_sulfur_dioxide,0.9,,0.5019425019425019
+MAR,basic,709,residual_sugar,0.1,chlorides,0.754653130287648
+MAR,double_threshold,709,residual_sugar,0.1,"['chlorides', 'fixed_acidity']",0.8853754940711462
+MAR,range_condition,709,residual_sugar,0.1,chlorides,0.8246013667425968
+MAR,nonlinear,709,residual_sugar,0.1,chlorides,0.8901960784313725
+MCAR,none,709,residual_sugar,0.1,,0.5124698310539019
+MAR,basic,709,residual_sugar,0.2,chlorides,0.7632013201320133
+MAR,double_threshold,709,residual_sugar,0.2,"['chlorides', 'fixed_acidity']",0.9045801526717557
+MAR,range_condition,709,residual_sugar,0.2,chlorides,0.8286985539488321
+MAR,nonlinear,709,residual_sugar,0.2,chlorides,0.9128787878787878
+MCAR,none,709,residual_sugar,0.2,,0.5037298782881822
+MAR,basic,709,residual_sugar,0.30000000000000004,chlorides,0.7939058171745152
+MAR,double_threshold,709,residual_sugar,0.30000000000000004,"['chlorides', 'fixed_acidity']",0.9148387096774193
+MAR,range_condition,709,residual_sugar,0.30000000000000004,chlorides,0.8534936138241923
+MAR,nonlinear,709,residual_sugar,0.30000000000000004,chlorides,0.9245524296675192
+MCAR,none,709,residual_sugar,0.30000000000000004,,0.5035554385040821
+MAR,basic,709,residual_sugar,0.4,chlorides,0.7889215274863617
+MAR,double_threshold,709,residual_sugar,0.4,"['chlorides', 'fixed_acidity']",0.93
+MAR,range_condition,709,residual_sugar,0.4,chlorides,0.8554979850316637
+MAR,nonlinear,709,residual_sugar,0.4,chlorides,0.9110671936758893
+MCAR,none,709,residual_sugar,0.4,,0.5030711313651675
+MAR,basic,709,residual_sugar,0.5,chlorides,0.8193291265360345
+MAR,double_threshold,709,residual_sugar,0.5,"['chlorides', 'fixed_acidity']",0.9364069952305246
+MAR,range_condition,709,residual_sugar,0.5,chlorides,0.8701417466849566
+MAR,nonlinear,709,residual_sugar,0.5,chlorides,0.9396551724137931
+MCAR,none,709,residual_sugar,0.5,,0.5106552162849872
+MAR,basic,709,residual_sugar,0.6000000000000001,chlorides,0.8386917960088692
+MAR,double_threshold,709,residual_sugar,0.6000000000000001,"['chlorides', 'fixed_acidity']",0.9527296937416777
+MAR,range_condition,709,residual_sugar,0.6000000000000001,chlorides,0.8995051389417587
+MAR,nonlinear,709,residual_sugar,0.6000000000000001,chlorides,0.9468154957321077
+MCAR,none,709,residual_sugar,0.6000000000000001,,0.49260209114223713
+MAR,basic,709,residual_sugar,0.7000000000000001,chlorides,0.8745827372436814
+MAR,double_threshold,709,residual_sugar,0.7000000000000001,"['chlorides', 'fixed_acidity']",0.9640579710144928
+MAR,range_condition,709,residual_sugar,0.7000000000000001,chlorides,0.9137190082644628
+MAR,nonlinear,709,residual_sugar,0.7000000000000001,chlorides,0.9588336192109777
+MCAR,none,709,residual_sugar,0.7000000000000001,,0.5039164490861618
+MAR,basic,709,residual_sugar,0.8,chlorides,0.903539639826123
+MAR,double_threshold,709,residual_sugar,0.8,"['chlorides', 'fixed_acidity']",0.974601593625498
+MAR,range_condition,709,residual_sugar,0.8,chlorides,0.9452094090648308
+MAR,nonlinear,709,residual_sugar,0.8,chlorides,0.9714847590953786
+MCAR,none,709,residual_sugar,0.8,,0.4742024419062623
+MAR,basic,709,residual_sugar,0.9,chlorides,0.9510361269026224
+MAR,double_threshold,709,residual_sugar,0.9,"['chlorides', 'fixed_acidity']",0.98719646799117
+MAR,range_condition,709,residual_sugar,0.9,chlorides,0.9723910840932117
+MAR,nonlinear,709,residual_sugar,0.9,chlorides,0.9869337979094077
+MCAR,none,709,residual_sugar,0.9,,0.5139220365950676
+MAR,basic,218,citric_acid,0.1,volatile_acidity,0.7042801556420234
+MAR,double_threshold,218,citric_acid,0.1,"['volatile_acidity', 'free_sulfur_dioxide']",0.9322033898305084
+MAR,range_condition,218,citric_acid,0.1,volatile_acidity,0.811623246492986
+MAR,nonlinear,218,citric_acid,0.1,volatile_acidity,0.597621407333994
+MCAR,none,218,citric_acid,0.1,,0.4976635514018692
+MAR,basic,218,citric_acid,0.2,volatile_acidity,0.6906148867313916
+MAR,double_threshold,218,citric_acid,0.2,"['volatile_acidity', 'free_sulfur_dioxide']",0.9544072948328267
+MAR,range_condition,218,citric_acid,0.2,volatile_acidity,0.837948717948718
+MAR,nonlinear,218,citric_acid,0.2,volatile_acidity,0.6160358565737052
+MCAR,none,218,citric_acid,0.2,,0.495323460639127
+MAR,basic,218,citric_acid,0.30000000000000004,volatile_acidity,0.7258485639686684
+MAR,double_threshold,218,citric_acid,0.30000000000000004,"['volatile_acidity', 'free_sulfur_dioxide']",0.96
+MAR,range_condition,218,citric_acid,0.30000000000000004,volatile_acidity,0.8231197771587744
+MAR,nonlinear,218,citric_acid,0.30000000000000004,volatile_acidity,0.5950468540829986
+MCAR,none,218,citric_acid,0.30000000000000004,,0.5030351016099235
+MAR,basic,218,citric_acid,0.4,volatile_acidity,0.7460058689272905
+MAR,double_threshold,218,citric_acid,0.4,"['volatile_acidity', 'free_sulfur_dioxide']",0.957613814756672
+MAR,range_condition,218,citric_acid,0.4,volatile_acidity,0.8449895615866388
+MAR,nonlinear,218,citric_acid,0.4,volatile_acidity,0.6261283851554664
+MCAR,none,218,citric_acid,0.4,,0.5143195733754691
+MAR,basic,218,citric_acid,0.5,volatile_acidity,0.7590551181102362
+MAR,double_threshold,218,citric_acid,0.5,"['volatile_acidity', 'free_sulfur_dioxide']",0.9664082687338501
+MAR,range_condition,218,citric_acid,0.5,volatile_acidity,0.8627700127064803
+MAR,nonlinear,218,citric_acid,0.5,volatile_acidity,0.6375703942075623
+MCAR,none,218,citric_acid,0.5,,0.5107535446869523
+MAR,basic,218,citric_acid,0.6000000000000001,volatile_acidity,0.7802611197167515
+MAR,double_threshold,218,citric_acid,0.6000000000000001,"['volatile_acidity', 'free_sulfur_dioxide']",0.9752421959095802
+MAR,range_condition,218,citric_acid,0.6000000000000001,volatile_acidity,0.8853161843515541
+MAR,nonlinear,218,citric_acid,0.6000000000000001,volatile_acidity,0.6599560142107934
+MCAR,none,218,citric_acid,0.6000000000000001,,0.5076071922544951
+MAR,basic,218,citric_acid,0.7000000000000001,volatile_acidity,0.8195445920303606
+MAR,double_threshold,218,citric_acid,0.7000000000000001,"['volatile_acidity', 'free_sulfur_dioxide']",0.9823911028730306
+MAR,range_condition,218,citric_acid,0.7000000000000001,volatile_acidity,0.9098436062557498
+MAR,nonlinear,218,citric_acid,0.7000000000000001,volatile_acidity,0.7125109361329833
+MCAR,none,218,citric_acid,0.7000000000000001,,0.5149449396958574
+MAR,basic,218,citric_acid,0.8,volatile_acidity,0.8619830592924763
+MAR,double_threshold,218,citric_acid,0.8,"['volatile_acidity', 'free_sulfur_dioxide']",0.9871175523349437
+MAR,range_condition,218,citric_acid,0.8,volatile_acidity,0.9338156484458735
+MAR,nonlinear,218,citric_acid,0.8,volatile_acidity,0.7601100995130213
+MCAR,none,218,citric_acid,0.8,,0.506090373280943
+MAR,basic,218,citric_acid,0.9,volatile_acidity,0.9257799108673295
+MAR,double_threshold,218,citric_acid,0.9,"['volatile_acidity', 'free_sulfur_dioxide']",0.9900213827512473
+MAR,range_condition,218,citric_acid,0.9,volatile_acidity,0.9706863679694948
+MAR,nonlinear,218,citric_acid,0.9,volatile_acidity,0.8476114224713104
+MCAR,none,218,citric_acid,0.9,,0.507416081186573
+MAR,basic,237,density,0.1,alcohol,0.7757009345794392
+MAR,double_threshold,237,density,0.1,"['alcohol', 'total_sulfur_dioxide']",0.882183908045977
+MAR,range_condition,237,density,0.1,alcohol,0.740484429065744
+MAR,nonlinear,237,density,0.1,alcohol,0.9221556886227545
+MCAR,none,237,density,0.1,,0.5129032258064516
+MAR,basic,237,density,0.2,alcohol,0.8100664767331434
+MAR,double_threshold,237,density,0.2,"['alcohol', 'total_sulfur_dioxide']",0.8696296296296296
+MAR,range_condition,237,density,0.2,alcohol,0.7530647985989493
+MAR,nonlinear,237,density,0.2,alcohol,0.9382716049382716
+MCAR,none,237,density,0.2,,0.49878048780487805
+MAR,basic,237,density,0.30000000000000004,alcohol,0.7895716945996276
+MAR,double_threshold,237,density,0.30000000000000004,"['alcohol', 'total_sulfur_dioxide']",0.8813229571984436
+MAR,range_condition,237,density,0.30000000000000004,alcohol,0.7978110599078341
+MAR,nonlinear,237,density,0.30000000000000004,alcohol,0.9589322381930184
+MCAR,none,237,density,0.30000000000000004,,0.49533706368238745
+MAR,basic,237,density,0.4,alcohol,0.8250348999534667
+MAR,double_threshold,237,density,0.4,"['alcohol', 'total_sulfur_dioxide']",0.8913669064748202
+MAR,range_condition,237,density,0.4,alcohol,0.7887020267356619
+MAR,nonlinear,237,density,0.4,alcohol,0.946236559139785
+MCAR,none,237,density,0.4,,0.5070562512422978
+MAR,basic,237,density,0.5,alcohol,0.8339456282145481
+MAR,double_threshold,237,density,0.5,"['alcohol', 'total_sulfur_dioxide']",0.9063392347230155
+MAR,range_condition,237,density,0.5,alcohol,0.8216234652114598
+MAR,nonlinear,237,density,0.5,alcohol,0.941320293398533
+MCAR,none,237,density,0.5,,0.49936265137029956
+MAR,basic,237,density,0.6000000000000001,alcohol,0.8567054500918555
+MAR,double_threshold,237,density,0.6000000000000001,"['alcohol', 'total_sulfur_dioxide']",0.9202483285577842
+MAR,range_condition,237,density,0.6000000000000001,alcohol,0.8504540295119183
+MAR,nonlinear,237,density,0.6000000000000001,alcohol,0.9639546858908342
+MCAR,none,237,density,0.6000000000000001,,0.5043824701195219
+MAR,basic,237,density,0.7000000000000001,alcohol,0.8944050433412135
+MAR,double_threshold,237,density,0.7000000000000001,"['alcohol', 'total_sulfur_dioxide']",0.9400826446280992
+MAR,range_condition,237,density,0.7000000000000001,alcohol,0.867704280155642
+MAR,nonlinear,237,density,0.7000000000000001,alcohol,0.9829596412556054
+MCAR,none,237,density,0.7000000000000001,,0.4936440677966102
+MAR,basic,237,density,0.8,alcohol,0.920602327173169
+MAR,double_threshold,237,density,0.8,"['alcohol', 'total_sulfur_dioxide']",0.966344432509846
+MAR,range_condition,237,density,0.8,alcohol,0.9118952038875977
+MAR,nonlinear,237,density,0.8,alcohol,0.9844840961986036
+MCAR,none,237,density,0.8,,0.5032102728731942
+MAR,basic,237,density,0.9,alcohol,0.9632412672623883
+MAR,double_threshold,237,density,0.9,"['alcohol', 'total_sulfur_dioxide']",0.9811139564660691
+MAR,range_condition,237,density,0.9,alcohol,0.9558187629253619
+MAR,nonlinear,237,density,0.9,alcohol,0.9937586685159501
+MCAR,none,237,density,0.9,,0.5141065830721003

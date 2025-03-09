@@ -215,13 +215,13 @@ class MissingnessParamsGenerator:
         if self.current_experiment >= self.n_experiments:
             raise StopIteration
             
-        mechanism = self.rng.choice(['MCAR', 'MAR', 'MNAR'])
+        mechanism = self.rng.choice(['MCAR', 'MAR'])
         _print(self.verbose, f"\n[Generator] Chosen missingness mechanism: {mechanism}")
 
         if mechanism == 'MAR':
-            strategy = self.rng.choice(['basic', 'double_threshold', 'range_condition', 'nonlinear', 'logistic'])
-        elif mechanism == 'MNAR':
-            strategy = self.rng.choice(['basic', 'logistic'])
+            strategy = self.rng.choice(['basic', 'double_threshold', 'range_condition', 'nonlinear'])
+        # elif mechanism == 'MNAR':
+            # strategy = self.rng.choice(['basic', 'logistic'])
         else:
             strategy = "none"  # For MCAR, strategy is not used.
         _print(self.verbose, f"[Generator] Chosen strategy for missingness: {strategy}")

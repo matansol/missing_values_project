@@ -1,0 +1,449 @@
+mechanism,strategy,random_state,target_feature,missing_rate,condition_feature,acc
+MAR,basic,25,Glucose,0.1,DiabetesPedigreeFunction,0.7142857142857143
+MAR,double_threshold,25,Glucose,0.1,"['DiabetesPedigreeFunction', 'BloodPressure']",0.7272727272727273
+MAR,range_condition,25,Glucose,0.1,DiabetesPedigreeFunction,0.5769230769230769
+MAR,nonlinear,25,Glucose,0.1,DiabetesPedigreeFunction,0.7727272727272727
+MCAR,none,25,Glucose,0.1,,0.5
+MAR,basic,25,Glucose,0.2,DiabetesPedigreeFunction,0.7777777777777778
+MAR,double_threshold,25,Glucose,0.2,"['DiabetesPedigreeFunction', 'BloodPressure']",0.7560975609756098
+MAR,range_condition,25,Glucose,0.2,DiabetesPedigreeFunction,0.673469387755102
+MAR,nonlinear,25,Glucose,0.2,DiabetesPedigreeFunction,0.7560975609756098
+MCAR,none,25,Glucose,0.2,,0.5591397849462365
+MAR,basic,25,Glucose,0.30000000000000004,DiabetesPedigreeFunction,0.6533333333333333
+MAR,double_threshold,25,Glucose,0.30000000000000004,"['DiabetesPedigreeFunction', 'BloodPressure']",0.625
+MAR,range_condition,25,Glucose,0.30000000000000004,DiabetesPedigreeFunction,0.6764705882352942
+MAR,nonlinear,25,Glucose,0.30000000000000004,DiabetesPedigreeFunction,0.8392857142857143
+MCAR,none,25,Glucose,0.30000000000000004,,0.43410852713178294
+MAR,basic,25,Glucose,0.4,DiabetesPedigreeFunction,0.7244897959183674
+MAR,double_threshold,25,Glucose,0.4,"['DiabetesPedigreeFunction', 'BloodPressure']",0.8
+MAR,range_condition,25,Glucose,0.4,DiabetesPedigreeFunction,0.7333333333333333
+MAR,nonlinear,25,Glucose,0.4,DiabetesPedigreeFunction,0.7866666666666666
+MCAR,none,25,Glucose,0.4,,0.4797687861271676
+MAR,basic,25,Glucose,0.5,DiabetesPedigreeFunction,0.8181818181818182
+MAR,double_threshold,25,Glucose,0.5,"['DiabetesPedigreeFunction', 'BloodPressure']",0.8529411764705882
+MAR,range_condition,25,Glucose,0.5,DiabetesPedigreeFunction,0.7622950819672131
+MAR,nonlinear,25,Glucose,0.5,DiabetesPedigreeFunction,0.8235294117647058
+MCAR,none,25,Glucose,0.5,,0.508695652173913
+MAR,basic,25,Glucose,0.6000000000000001,DiabetesPedigreeFunction,0.8242424242424242
+MAR,double_threshold,25,Glucose,0.6000000000000001,"['DiabetesPedigreeFunction', 'BloodPressure']",0.888
+MAR,range_condition,25,Glucose,0.6000000000000001,DiabetesPedigreeFunction,0.8552631578947368
+MAR,nonlinear,25,Glucose,0.6000000000000001,DiabetesPedigreeFunction,0.872
+MCAR,none,25,Glucose,0.6000000000000001,,0.5056179775280899
+MAR,basic,25,Glucose,0.7000000000000001,DiabetesPedigreeFunction,0.8776595744680851
+MAR,double_threshold,25,Glucose,0.7000000000000001,"['DiabetesPedigreeFunction', 'BloodPressure']",0.8936170212765957
+MAR,range_condition,25,Glucose,0.7000000000000001,DiabetesPedigreeFunction,0.8670520231213873
+MAR,nonlinear,25,Glucose,0.7000000000000001,DiabetesPedigreeFunction,0.9148936170212766
+MCAR,none,25,Glucose,0.7000000000000001,,0.42857142857142855
+MAR,basic,25,Glucose,0.8,DiabetesPedigreeFunction,0.9014084507042254
+MAR,double_threshold,25,Glucose,0.8,"['DiabetesPedigreeFunction', 'BloodPressure']",0.9813664596273292
+MAR,range_condition,25,Glucose,0.8,DiabetesPedigreeFunction,0.8871794871794871
+MAR,nonlinear,25,Glucose,0.8,DiabetesPedigreeFunction,0.9813664596273292
+MCAR,none,25,Glucose,0.8,,0.4895833333333333
+MAR,basic,25,Glucose,0.9,DiabetesPedigreeFunction,0.9427312775330396
+MAR,double_threshold,25,Glucose,0.9,"['DiabetesPedigreeFunction', 'BloodPressure']",0.9943502824858758
+MAR,range_condition,25,Glucose,0.9,DiabetesPedigreeFunction,0.9537037037037037
+MAR,nonlinear,25,Glucose,0.9,DiabetesPedigreeFunction,0.9491525423728814
+MCAR,none,25,Glucose,0.9,,0.5333333333333333
+MAR,basic,945,Pregnancies,0.1,BMI,0.7407407407407407
+MAR,double_threshold,945,Pregnancies,0.1,"['BMI', 'Glucose']",0.7777777777777778
+MAR,range_condition,945,Pregnancies,0.1,BMI,0.8260869565217391
+MAR,nonlinear,945,Pregnancies,0.1,BMI,0.5
+MCAR,none,945,Pregnancies,0.1,,0.45454545454545453
+MAR,basic,945,Pregnancies,0.2,BMI,0.62
+MAR,double_threshold,945,Pregnancies,0.2,"['BMI', 'Glucose']",0.8888888888888888
+MAR,range_condition,945,Pregnancies,0.2,BMI,0.6666666666666666
+MAR,nonlinear,945,Pregnancies,0.2,BMI,0.5283018867924528
+MCAR,none,945,Pregnancies,0.2,,0.4897959183673469
+MAR,basic,945,Pregnancies,0.30000000000000004,BMI,0.7746478873239436
+MAR,double_threshold,945,Pregnancies,0.30000000000000004,"['BMI', 'Glucose']",0.9459459459459459
+MAR,range_condition,945,Pregnancies,0.30000000000000004,BMI,0.7796610169491526
+MAR,nonlinear,945,Pregnancies,0.30000000000000004,BMI,0.5733333333333334
+MCAR,none,945,Pregnancies,0.30000000000000004,,0.5071428571428571
+MAR,basic,945,Pregnancies,0.4,BMI,0.7821782178217822
+MAR,double_threshold,945,Pregnancies,0.4,"['BMI', 'Glucose']",0.8928571428571429
+MAR,range_condition,945,Pregnancies,0.4,BMI,0.8045977011494253
+MAR,nonlinear,945,Pregnancies,0.4,BMI,0.5943396226415094
+MCAR,none,945,Pregnancies,0.4,,0.4322916666666667
+MAR,basic,945,Pregnancies,0.5,BMI,0.8083333333333333
+MAR,double_threshold,945,Pregnancies,0.5,"['BMI', 'Glucose']",0.9014084507042254
+MAR,range_condition,945,Pregnancies,0.5,BMI,0.8113207547169812
+MAR,nonlinear,945,Pregnancies,0.5,BMI,0.626984126984127
+MCAR,none,945,Pregnancies,0.5,,0.44298245614035087
+MAR,basic,945,Pregnancies,0.6000000000000001,BMI,0.7808219178082192
+MAR,double_threshold,945,Pregnancies,0.6000000000000001,"['BMI', 'Glucose']",0.9404761904761905
+MAR,range_condition,945,Pregnancies,0.6000000000000001,BMI,0.8372093023255814
+MAR,nonlinear,945,Pregnancies,0.6000000000000001,BMI,0.6470588235294118
+MCAR,none,945,Pregnancies,0.6000000000000001,,0.47752808988764045
+MAR,basic,945,Pregnancies,0.7000000000000001,BMI,0.8303030303030303
+MAR,double_threshold,945,Pregnancies,0.7000000000000001,"['BMI', 'Glucose']",0.9574468085106383
+MAR,range_condition,945,Pregnancies,0.7000000000000001,BMI,0.8698630136986302
+MAR,nonlinear,945,Pregnancies,0.7000000000000001,BMI,0.7283236994219653
+MCAR,none,945,Pregnancies,0.7000000000000001,,0.5259259259259259
+MAR,basic,945,Pregnancies,0.8,BMI,0.8783068783068783
+MAR,double_threshold,945,Pregnancies,0.8,"['BMI', 'Glucose']",0.9906542056074766
+MAR,range_condition,945,Pregnancies,0.8,BMI,0.9161676646706587
+MAR,nonlinear,945,Pregnancies,0.8,BMI,0.7929292929292929
+MCAR,none,945,Pregnancies,0.8,,0.4157303370786517
+MAR,basic,945,Pregnancies,0.9,BMI,0.9583333333333334
+MAR,double_threshold,945,Pregnancies,0.9,"['BMI', 'Glucose']",0.9663865546218487
+MAR,range_condition,945,Pregnancies,0.9,BMI,0.9576719576719577
+MAR,nonlinear,945,Pregnancies,0.9,BMI,0.8634361233480177
+MCAR,none,945,Pregnancies,0.9,,0.4791666666666667
+MAR,basic,217,Glucose,0.1,BMI,0.875
+MAR,double_threshold,217,Glucose,0.1,"['BMI', 'Pregnancies']",0.6111111111111112
+MAR,range_condition,217,Glucose,0.1,BMI,0.625
+MAR,nonlinear,217,Glucose,0.1,BMI,0.3333333333333333
+MCAR,none,217,Glucose,0.1,,0.36363636363636365
+MAR,basic,217,Glucose,0.2,BMI,0.7391304347826086
+MAR,double_threshold,217,Glucose,0.2,"['BMI', 'Pregnancies']",0.75
+MAR,range_condition,217,Glucose,0.2,BMI,0.7391304347826086
+MAR,nonlinear,217,Glucose,0.2,BMI,0.4
+MCAR,none,217,Glucose,0.2,,0.43010752688172044
+MAR,basic,217,Glucose,0.30000000000000004,BMI,0.9230769230769231
+MAR,double_threshold,217,Glucose,0.30000000000000004,"['BMI', 'Pregnancies']",0.7246376811594203
+MAR,range_condition,217,Glucose,0.30000000000000004,BMI,0.8717948717948718
+MAR,nonlinear,217,Glucose,0.30000000000000004,BMI,0.4117647058823529
+MCAR,none,217,Glucose,0.30000000000000004,,0.49645390070921985
+MAR,basic,217,Glucose,0.4,BMI,0.8541666666666666
+MAR,double_threshold,217,Glucose,0.4,"['BMI', 'Pregnancies']",0.7954545454545454
+MAR,range_condition,217,Glucose,0.4,BMI,0.7872340425531915
+MAR,nonlinear,217,Glucose,0.4,BMI,0.391304347826087
+MCAR,none,217,Glucose,0.4,,0.4627659574468085
+MAR,basic,217,Glucose,0.5,BMI,0.967741935483871
+MAR,double_threshold,217,Glucose,0.5,"['BMI', 'Pregnancies']",0.8392857142857143
+MAR,range_condition,217,Glucose,0.5,BMI,0.9344262295081968
+MAR,nonlinear,217,Glucose,0.5,BMI,0.5333333333333333
+MCAR,none,217,Glucose,0.5,,0.5242290748898678
+MAR,basic,217,Glucose,0.6000000000000001,BMI,0.9436619718309859
+MAR,double_threshold,217,Glucose,0.6000000000000001,"['BMI', 'Pregnancies']",0.8682170542635659
+MAR,range_condition,217,Glucose,0.6000000000000001,BMI,0.8591549295774648
+MAR,nonlinear,217,Glucose,0.6000000000000001,BMI,0.696969696969697
+MCAR,none,217,Glucose,0.6000000000000001,,0.4973544973544973
+MAR,basic,217,Glucose,0.7000000000000001,BMI,0.9404761904761905
+MAR,double_threshold,217,Glucose,0.7000000000000001,"['BMI', 'Pregnancies']",0.8552631578947368
+MAR,range_condition,217,Glucose,0.7000000000000001,BMI,0.9156626506024096
+MAR,nonlinear,217,Glucose,0.7000000000000001,BMI,0.5952380952380952
+MCAR,none,217,Glucose,0.7000000000000001,,0.4896551724137931
+MAR,basic,217,Glucose,0.8,BMI,0.9504950495049505
+MAR,double_threshold,217,Glucose,0.8,"['BMI', 'Pregnancies']",0.9016393442622951
+MAR,range_condition,217,Glucose,0.8,BMI,0.9797979797979798
+MAR,nonlinear,217,Glucose,0.8,BMI,0.6730769230769231
+MCAR,none,217,Glucose,0.8,,0.5777777777777777
+MAR,basic,217,Glucose,0.9,BMI,0.963963963963964
+MAR,double_threshold,217,Glucose,0.9,"['BMI', 'Pregnancies']",0.9393939393939394
+MAR,range_condition,217,Glucose,0.9,BMI,0.9814814814814815
+MAR,nonlinear,217,Glucose,0.9,BMI,0.7017543859649122
+MCAR,none,217,Glucose,0.9,,0.5625
+MAR,basic,150,BMI,0.1,Insulin,0.8333333333333334
+MAR,double_threshold,150,BMI,0.1,"['Insulin', 'BloodPressure']",0.75
+MAR,range_condition,150,BMI,0.1,Insulin,0.5517241379310345
+MAR,nonlinear,150,BMI,0.1,Insulin,0.8
+MCAR,none,150,BMI,0.1,,0.6388888888888888
+MAR,basic,150,BMI,0.2,Insulin,0.8214285714285714
+MAR,double_threshold,150,BMI,0.2,"['Insulin', 'BloodPressure']",0.7
+MAR,range_condition,150,BMI,0.2,Insulin,0.5416666666666666
+MAR,nonlinear,150,BMI,0.2,Insulin,0.8333333333333334
+MCAR,none,150,BMI,0.2,,0.43157894736842106
+MAR,basic,150,BMI,0.30000000000000004,Insulin,0.8409090909090909
+MAR,double_threshold,150,BMI,0.30000000000000004,"['Insulin', 'BloodPressure']",0.6176470588235294
+MAR,range_condition,150,BMI,0.30000000000000004,Insulin,0.6190476190476191
+MAR,nonlinear,150,BMI,0.30000000000000004,Insulin,0.8421052631578947
+MCAR,none,150,BMI,0.30000000000000004,,0.5514705882352942
+MAR,basic,150,BMI,0.4,Insulin,0.9322033898305084
+MAR,double_threshold,150,BMI,0.4,"['Insulin', 'BloodPressure']",0.9148936170212766
+MAR,range_condition,150,BMI,0.4,Insulin,0.6928571428571428
+MAR,nonlinear,150,BMI,0.4,Insulin,0.7037037037037037
+MCAR,none,150,BMI,0.4,,0.4745762711864407
+MAR,basic,150,BMI,0.5,Insulin,0.9743589743589743
+MAR,double_threshold,150,BMI,0.5,"['Insulin', 'BloodPressure']",0.9523809523809523
+MAR,range_condition,150,BMI,0.5,Insulin,0.6141304347826086
+MAR,nonlinear,150,BMI,0.5,Insulin,0.6
+MCAR,none,150,BMI,0.5,,0.5614035087719298
+MAR,basic,150,BMI,0.6000000000000001,Insulin,0.8888888888888888
+MAR,double_threshold,150,BMI,0.6000000000000001,"['Insulin', 'BloodPressure']",0.875
+MAR,range_condition,150,BMI,0.6000000000000001,Insulin,0.6986301369863014
+MAR,nonlinear,150,BMI,0.6000000000000001,Insulin,0.6666666666666666
+MCAR,none,150,BMI,0.6000000000000001,,0.478494623655914
+MAR,basic,150,BMI,0.7000000000000001,Insulin,0.9532710280373832
+MAR,double_threshold,150,BMI,0.7000000000000001,"['Insulin', 'BloodPressure']",0.9879518072289156
+MAR,range_condition,150,BMI,0.7000000000000001,Insulin,0.6893203883495146
+MAR,nonlinear,150,BMI,0.7000000000000001,Insulin,0.7333333333333333
+MCAR,none,150,BMI,0.7000000000000001,,0.5441176470588235
+MAR,basic,150,BMI,0.8,Insulin,0.952
+MAR,double_threshold,150,BMI,0.8,"['Insulin', 'BloodPressure']",0.9375
+MAR,range_condition,150,BMI,0.8,Insulin,0.7559523809523809
+MAR,nonlinear,150,BMI,0.8,Insulin,0.7058823529411765
+MCAR,none,150,BMI,0.8,,0.5168539325842697
+MAR,basic,150,BMI,0.9,Insulin,0.9785714285714285
+MAR,double_threshold,150,BMI,0.9,"['Insulin', 'BloodPressure']",1.0
+MAR,range_condition,150,BMI,0.9,Insulin,0.8656716417910447
+MAR,nonlinear,150,BMI,0.9,Insulin,0.7678571428571429
+MCAR,none,150,BMI,0.9,,0.5238095238095238
+MAR,basic,731,SkinThickness,0.1,Insulin,0.7222222222222222
+MAR,range_condition,731,SkinThickness,0.1,Insulin,0.6764705882352942
+MAR,nonlinear,731,SkinThickness,0.1,Insulin,0.625
+MCAR,none,731,SkinThickness,0.1,,0.6136363636363636
+MAR,basic,731,SkinThickness,0.2,Insulin,0.7575757575757576
+MAR,range_condition,731,SkinThickness,0.2,Insulin,0.5507246376811594
+MAR,nonlinear,731,SkinThickness,0.2,Insulin,0.6153846153846154
+MCAR,none,731,SkinThickness,0.2,,0.6086956521739131
+MAR,basic,731,SkinThickness,0.30000000000000004,Insulin,0.7708333333333334
+MAR,double_threshold,731,SkinThickness,0.30000000000000004,"['Insulin', 'Insulin']",1.0
+MAR,range_condition,731,SkinThickness,0.30000000000000004,Insulin,0.52
+MAR,nonlinear,731,SkinThickness,0.30000000000000004,Insulin,0.625
+MCAR,none,731,SkinThickness,0.30000000000000004,,0.5766423357664233
+MAR,basic,731,SkinThickness,0.4,Insulin,0.8636363636363636
+MAR,double_threshold,731,SkinThickness,0.4,"['Insulin', 'Insulin']",0.75
+MAR,range_condition,731,SkinThickness,0.4,Insulin,0.6492537313432836
+MAR,nonlinear,731,SkinThickness,0.4,Insulin,0.7916666666666666
+MCAR,none,731,SkinThickness,0.4,,0.47058823529411764
+MAR,basic,731,SkinThickness,0.5,Insulin,0.8586956521739131
+MAR,double_threshold,731,SkinThickness,0.5,"['Insulin', 'Insulin']",0.8333333333333334
+MAR,range_condition,731,SkinThickness,0.5,Insulin,0.6906077348066298
+MAR,nonlinear,731,SkinThickness,0.5,Insulin,0.631578947368421
+MCAR,none,731,SkinThickness,0.5,,0.43457943925233644
+MAR,basic,731,SkinThickness,0.6000000000000001,Insulin,0.8857142857142857
+MAR,double_threshold,731,SkinThickness,0.6000000000000001,"['Insulin', 'Insulin']",0.8333333333333334
+MAR,range_condition,731,SkinThickness,0.6000000000000001,Insulin,0.704225352112676
+MAR,nonlinear,731,SkinThickness,0.6000000000000001,Insulin,0.8604651162790697
+MCAR,none,731,SkinThickness,0.6000000000000001,,0.5149700598802395
+MAR,basic,731,SkinThickness,0.7000000000000001,Insulin,0.8650793650793651
+MAR,double_threshold,731,SkinThickness,0.7000000000000001,"['Insulin', 'Insulin']",0.6666666666666666
+MAR,range_condition,731,SkinThickness,0.7000000000000001,Insulin,0.7887323943661971
+MAR,nonlinear,731,SkinThickness,0.7000000000000001,Insulin,0.5740740740740741
+MCAR,none,731,SkinThickness,0.7000000000000001,,0.5040650406504065
+MAR,basic,731,SkinThickness,0.8,Insulin,0.9130434782608695
+MAR,double_threshold,731,SkinThickness,0.8,"['Insulin', 'Insulin']",0.7142857142857143
+MAR,range_condition,731,SkinThickness,0.8,Insulin,0.776595744680851
+MAR,nonlinear,731,SkinThickness,0.8,Insulin,0.7419354838709677
+MCAR,none,731,SkinThickness,0.8,,0.4444444444444444
+MAR,basic,731,SkinThickness,0.9,Insulin,0.9874213836477987
+MAR,double_threshold,731,SkinThickness,0.9,"['Insulin', 'Insulin']",0.7142857142857143
+MAR,range_condition,731,SkinThickness,0.9,Insulin,0.8758169934640523
+MAR,nonlinear,731,SkinThickness,0.9,Insulin,0.7638888888888888
+MCAR,none,731,SkinThickness,0.9,,0.48936170212765956
+MAR,basic,842,Insulin,0.1,BloodPressure,0.8181818181818182
+MAR,double_threshold,842,Insulin,0.1,"['BloodPressure', 'Glucose']",0.6666666666666666
+MAR,range_condition,842,Insulin,0.1,BloodPressure,0.625
+MAR,nonlinear,842,Insulin,0.1,BloodPressure,0.5555555555555556
+MCAR,none,842,Insulin,0.1,,0.4090909090909091
+MAR,basic,842,Insulin,0.2,BloodPressure,0.8571428571428571
+MAR,double_threshold,842,Insulin,0.2,"['BloodPressure', 'Glucose']",0.76
+MAR,range_condition,842,Insulin,0.2,BloodPressure,0.7
+MAR,nonlinear,842,Insulin,0.2,BloodPressure,0.5789473684210527
+MCAR,none,842,Insulin,0.2,,0.47058823529411764
+MAR,basic,842,Insulin,0.30000000000000004,BloodPressure,0.8611111111111112
+MAR,double_threshold,842,Insulin,0.30000000000000004,"['BloodPressure', 'Glucose']",0.9285714285714286
+MAR,range_condition,842,Insulin,0.30000000000000004,BloodPressure,0.68
+MAR,nonlinear,842,Insulin,0.30000000000000004,BloodPressure,0.7419354838709677
+MCAR,none,842,Insulin,0.30000000000000004,,0.4609375
+MAR,basic,842,Insulin,0.4,BloodPressure,0.9019607843137255
+MAR,double_threshold,842,Insulin,0.4,"['BloodPressure', 'Glucose']",0.7931034482758621
+MAR,range_condition,842,Insulin,0.4,BloodPressure,0.7941176470588235
+MAR,nonlinear,842,Insulin,0.4,BloodPressure,0.6666666666666666
+MCAR,none,842,Insulin,0.4,,0.543859649122807
+MAR,basic,842,Insulin,0.5,BloodPressure,0.9836065573770492
+MAR,double_threshold,842,Insulin,0.5,"['BloodPressure', 'Glucose']",0.8428571428571429
+MAR,range_condition,842,Insulin,0.5,BloodPressure,0.8536585365853658
+MAR,nonlinear,842,Insulin,0.5,BloodPressure,0.74
+MCAR,none,842,Insulin,0.5,,0.5023474178403756
+MAR,basic,842,Insulin,0.6000000000000001,BloodPressure,0.922077922077922
+MAR,double_threshold,842,Insulin,0.6000000000000001,"['BloodPressure', 'Glucose']",0.8764044943820225
+MAR,range_condition,842,Insulin,0.6000000000000001,BloodPressure,0.897196261682243
+MAR,nonlinear,842,Insulin,0.6000000000000001,BloodPressure,0.7692307692307693
+MCAR,none,842,Insulin,0.6000000000000001,,0.5154639175257731
+MAR,basic,842,Insulin,0.7000000000000001,BloodPressure,0.9775280898876404
+MAR,double_threshold,842,Insulin,0.7000000000000001,"['BloodPressure', 'Glucose']",0.9615384615384616
+MAR,range_condition,842,Insulin,0.7000000000000001,BloodPressure,0.9047619047619048
+MAR,nonlinear,842,Insulin,0.7000000000000001,BloodPressure,0.7894736842105263
+MCAR,none,842,Insulin,0.7000000000000001,,0.475177304964539
+MAR,basic,842,Insulin,0.8,BloodPressure,0.9702970297029703
+MAR,double_threshold,842,Insulin,0.8,"['BloodPressure', 'Glucose']",0.9663865546218487
+MAR,range_condition,842,Insulin,0.8,BloodPressure,0.9788732394366197
+MAR,nonlinear,842,Insulin,0.8,BloodPressure,0.686046511627907
+MCAR,none,842,Insulin,0.8,,0.42424242424242425
+MAR,basic,842,Insulin,0.9,BloodPressure,0.991304347826087
+MAR,double_threshold,842,Insulin,0.9,"['BloodPressure', 'Glucose']",0.9703703703703703
+MAR,range_condition,842,Insulin,0.9,BloodPressure,0.9874213836477987
+MAR,nonlinear,842,Insulin,0.9,BloodPressure,0.7959183673469388
+MCAR,none,842,Insulin,0.9,,0.5471698113207547
+MAR,basic,111,DiabetesPedigreeFunction,0.1,Insulin,0.8235294117647058
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.1,"['Insulin', 'BMI']",0.7105263157894737
+MAR,range_condition,111,DiabetesPedigreeFunction,0.1,Insulin,0.7222222222222222
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.1,Insulin,0.625
+MCAR,none,111,DiabetesPedigreeFunction,0.1,,0.5686274509803921
+MAR,basic,111,DiabetesPedigreeFunction,0.2,Insulin,0.8484848484848485
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.2,"['Insulin', 'BMI']",0.7391304347826086
+MAR,range_condition,111,DiabetesPedigreeFunction,0.2,Insulin,0.7058823529411765
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.2,Insulin,0.9375
+MCAR,none,111,DiabetesPedigreeFunction,0.2,,0.4174757281553398
+MAR,basic,111,DiabetesPedigreeFunction,0.30000000000000004,Insulin,0.7551020408163265
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.30000000000000004,"['Insulin', 'BMI']",0.6632653061224489
+MAR,range_condition,111,DiabetesPedigreeFunction,0.30000000000000004,Insulin,0.6631578947368421
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.30000000000000004,Insulin,0.6190476190476191
+MCAR,none,111,DiabetesPedigreeFunction,0.30000000000000004,,0.47619047619047616
+MAR,basic,111,DiabetesPedigreeFunction,0.4,Insulin,0.8833333333333333
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.4,"['Insulin', 'BMI']",0.6796875
+MAR,range_condition,111,DiabetesPedigreeFunction,0.4,Insulin,0.6991869918699187
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.4,Insulin,0.84
+MCAR,none,111,DiabetesPedigreeFunction,0.4,,0.5497382198952879
+MAR,basic,111,DiabetesPedigreeFunction,0.5,Insulin,0.8
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.5,"['Insulin', 'BMI']",0.6503067484662577
+MAR,range_condition,111,DiabetesPedigreeFunction,0.5,Insulin,0.7435897435897436
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.5,Insulin,0.7428571428571429
+MCAR,none,111,DiabetesPedigreeFunction,0.5,,0.54337899543379
+MAR,basic,111,DiabetesPedigreeFunction,0.6000000000000001,Insulin,0.9111111111111111
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.6000000000000001,"['Insulin', 'BMI']",0.7127659574468085
+MAR,range_condition,111,DiabetesPedigreeFunction,0.6000000000000001,Insulin,0.7722222222222223
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.6000000000000001,Insulin,0.7368421052631579
+MCAR,none,111,DiabetesPedigreeFunction,0.6000000000000001,,0.56353591160221
+MAR,basic,111,DiabetesPedigreeFunction,0.7000000000000001,Insulin,0.9439252336448598
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.7000000000000001,"['Insulin', 'BMI']",0.8119266055045872
+MAR,range_condition,111,DiabetesPedigreeFunction,0.7000000000000001,Insulin,0.7990430622009569
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.7000000000000001,Insulin,0.6818181818181818
+MCAR,none,111,DiabetesPedigreeFunction,0.7000000000000001,,0.44525547445255476
+MAR,basic,111,DiabetesPedigreeFunction,0.8,Insulin,0.9327731092436975
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.8,"['Insulin', 'BMI']",0.8577981651376146
+MAR,range_condition,111,DiabetesPedigreeFunction,0.8,Insulin,0.8722466960352423
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.8,Insulin,0.7659574468085106
+MCAR,none,111,DiabetesPedigreeFunction,0.8,,0.5
+MAR,basic,111,DiabetesPedigreeFunction,0.9,Insulin,0.9777777777777777
+MAR,double_threshold,111,DiabetesPedigreeFunction,0.9,"['Insulin', 'BMI']",0.9047619047619048
+MAR,range_condition,111,DiabetesPedigreeFunction,0.9,Insulin,0.8939393939393939
+MAR,nonlinear,111,DiabetesPedigreeFunction,0.9,Insulin,0.7358490566037735
+MCAR,none,111,DiabetesPedigreeFunction,0.9,,0.52
+MAR,basic,548,Glucose,0.1,BMI,0.6666666666666666
+MAR,double_threshold,548,Glucose,0.1,"['BMI', 'SkinThickness']",0.75
+MAR,range_condition,548,Glucose,0.1,BMI,0.7272727272727273
+MAR,nonlinear,548,Glucose,0.1,BMI,0.5
+MCAR,none,548,Glucose,0.1,,0.5833333333333334
+MAR,basic,548,Glucose,0.2,BMI,0.6956521739130435
+MAR,double_threshold,548,Glucose,0.2,"['BMI', 'SkinThickness']",0.6875
+MAR,range_condition,548,Glucose,0.2,BMI,0.7142857142857143
+MAR,nonlinear,548,Glucose,0.2,BMI,0.38461538461538464
+MCAR,none,548,Glucose,0.2,,0.5368421052631579
+MAR,basic,548,Glucose,0.30000000000000004,BMI,0.7941176470588235
+MAR,double_threshold,548,Glucose,0.30000000000000004,"['BMI', 'SkinThickness']",0.9130434782608695
+MAR,range_condition,548,Glucose,0.30000000000000004,BMI,0.7209302325581395
+MAR,nonlinear,548,Glucose,0.30000000000000004,BMI,0.6842105263157895
+MCAR,none,548,Glucose,0.30000000000000004,,0.4927536231884058
+MAR,basic,548,Glucose,0.4,BMI,0.9361702127659575
+MAR,double_threshold,548,Glucose,0.4,"['BMI', 'SkinThickness']",0.8125
+MAR,range_condition,548,Glucose,0.4,BMI,0.7903225806451613
+MAR,nonlinear,548,Glucose,0.4,BMI,0.48148148148148145
+MCAR,none,548,Glucose,0.4,,0.5355191256830601
+MAR,basic,548,Glucose,0.5,BMI,0.8947368421052632
+MAR,double_threshold,548,Glucose,0.5,"['BMI', 'SkinThickness']",0.85
+MAR,range_condition,548,Glucose,0.5,BMI,0.8157894736842105
+MAR,nonlinear,548,Glucose,0.5,BMI,0.5454545454545454
+MCAR,none,548,Glucose,0.5,,0.5330396475770925
+MAR,basic,548,Glucose,0.6000000000000001,BMI,0.9565217391304348
+MAR,double_threshold,548,Glucose,0.6000000000000001,"['BMI', 'SkinThickness']",0.9361702127659575
+MAR,range_condition,548,Glucose,0.6000000000000001,BMI,0.8105263157894737
+MAR,nonlinear,548,Glucose,0.6000000000000001,BMI,0.5641025641025641
+MCAR,none,548,Glucose,0.6000000000000001,,0.4787234042553192
+MAR,basic,548,Glucose,0.7000000000000001,BMI,0.9259259259259259
+MAR,double_threshold,548,Glucose,0.7000000000000001,"['BMI', 'SkinThickness']",0.9814814814814815
+MAR,range_condition,548,Glucose,0.7000000000000001,BMI,0.9035087719298246
+MAR,nonlinear,548,Glucose,0.7000000000000001,BMI,0.7555555555555555
+MCAR,none,548,Glucose,0.7000000000000001,,0.5362318840579711
+MAR,basic,548,Glucose,0.8,BMI,0.9504950495049505
+MAR,double_threshold,548,Glucose,0.8,"['BMI', 'SkinThickness']",0.9852941176470589
+MAR,range_condition,548,Glucose,0.8,BMI,0.8985507246376812
+MAR,nonlinear,548,Glucose,0.8,BMI,0.6981132075471698
+MCAR,none,548,Glucose,0.8,,0.5747126436781609
+MAR,basic,548,Glucose,0.9,BMI,0.9824561403508771
+MAR,double_threshold,548,Glucose,0.9,"['BMI', 'SkinThickness']",1.0
+MAR,range_condition,548,Glucose,0.9,BMI,0.967948717948718
+MAR,nonlinear,548,Glucose,0.9,BMI,0.7666666666666667
+MCAR,none,548,Glucose,0.9,,0.4090909090909091
+MAR,basic,378,BMI,0.1,Glucose,0.5121951219512195
+MAR,double_threshold,378,BMI,0.1,"['Glucose', 'Insulin']",0.5454545454545454
+MAR,range_condition,378,BMI,0.1,Glucose,0.6875
+MAR,nonlinear,378,BMI,0.1,Glucose,0.5777777777777777
+MCAR,none,378,BMI,0.1,,0.48
+MAR,basic,378,BMI,0.2,Glucose,0.5833333333333334
+MAR,double_threshold,378,BMI,0.2,"['Glucose', 'Insulin']",0.8292682926829268
+MAR,range_condition,378,BMI,0.2,Glucose,0.7457627118644068
+MAR,nonlinear,378,BMI,0.2,Glucose,0.47619047619047616
+MCAR,none,378,BMI,0.2,,0.532608695652174
+MAR,basic,378,BMI,0.30000000000000004,Glucose,0.6078431372549019
+MAR,double_threshold,378,BMI,0.30000000000000004,"['Glucose', 'Insulin']",0.8245614035087719
+MAR,range_condition,378,BMI,0.30000000000000004,Glucose,0.6867469879518072
+MAR,nonlinear,378,BMI,0.30000000000000004,Glucose,0.464
+MCAR,none,378,BMI,0.30000000000000004,,0.4647887323943662
+MAR,basic,378,BMI,0.4,Glucose,0.6106870229007634
+MAR,double_threshold,378,BMI,0.4,"['Glucose', 'Insulin']",0.7866666666666666
+MAR,range_condition,378,BMI,0.4,Glucose,0.7476635514018691
+MAR,nonlinear,378,BMI,0.4,Glucose,0.4876543209876543
+MCAR,none,378,BMI,0.4,,0.4725274725274725
+MAR,basic,378,BMI,0.5,Glucose,0.6875
+MAR,double_threshold,378,BMI,0.5,"['Glucose', 'Insulin']",0.8586956521739131
+MAR,range_condition,378,BMI,0.5,Glucose,0.8384615384615385
+MAR,nonlinear,378,BMI,0.5,Glucose,0.5472636815920398
+MCAR,none,378,BMI,0.5,,0.5286343612334802
+MAR,basic,378,BMI,0.6000000000000001,Glucose,0.6852791878172588
+MAR,double_threshold,378,BMI,0.6000000000000001,"['Glucose', 'Insulin']",0.8869565217391304
+MAR,range_condition,378,BMI,0.6000000000000001,Glucose,0.779874213836478
+MAR,nonlinear,378,BMI,0.6000000000000001,Glucose,0.5117370892018779
+MCAR,none,378,BMI,0.6000000000000001,,0.4918032786885246
+MAR,basic,378,BMI,0.7000000000000001,Glucose,0.76
+MAR,double_threshold,378,BMI,0.7000000000000001,"['Glucose', 'Insulin']",0.9090909090909091
+MAR,range_condition,378,BMI,0.7000000000000001,Glucose,0.8296703296703297
+MAR,nonlinear,378,BMI,0.7000000000000001,Glucose,0.5307262569832403
+MCAR,none,378,BMI,0.7000000000000001,,0.5454545454545454
+MAR,basic,378,BMI,0.8,Glucose,0.8080808080808081
+MAR,double_threshold,378,BMI,0.8,"['Glucose', 'Insulin']",0.934640522875817
+MAR,range_condition,378,BMI,0.8,Glucose,0.9090909090909091
+MAR,nonlinear,378,BMI,0.8,Glucose,0.631578947368421
+MCAR,none,378,BMI,0.8,,0.48936170212765956
+MAR,basic,378,BMI,0.9,Glucose,0.8633540372670807
+MAR,double_threshold,378,BMI,0.9,"['Glucose', 'Insulin']",0.9590643274853801
+MAR,range_condition,378,BMI,0.9,Glucose,0.9605263157894737
+MAR,nonlinear,378,BMI,0.9,Glucose,0.47191011235955055
+MCAR,none,378,BMI,0.9,,0.6190476190476191
+MAR,basic,133,BMI,0.1,Age,0.6666666666666666
+MAR,double_threshold,133,BMI,0.1,"['Age', 'Glucose']",0.875
+MAR,range_condition,133,BMI,0.1,Age,0.7727272727272727
+MAR,nonlinear,133,BMI,0.1,Age,0.5517241379310345
+MCAR,none,133,BMI,0.1,,0.43137254901960786
+MAR,basic,133,BMI,0.2,Age,0.8125
+MAR,double_threshold,133,BMI,0.2,"['Age', 'Glucose']",0.8888888888888888
+MAR,range_condition,133,BMI,0.2,Age,0.7804878048780488
+MAR,nonlinear,133,BMI,0.2,Age,0.4528301886792453
+MCAR,none,133,BMI,0.2,,0.5612244897959183
+MAR,basic,133,BMI,0.30000000000000004,Age,0.782608695652174
+MAR,double_threshold,133,BMI,0.30000000000000004,"['Age', 'Glucose']",0.75
+MAR,range_condition,133,BMI,0.30000000000000004,Age,0.8135593220338984
+MAR,nonlinear,133,BMI,0.30000000000000004,Age,0.52
+MCAR,none,133,BMI,0.30000000000000004,,0.5106382978723404
+MAR,basic,133,BMI,0.4,Age,0.7888888888888889
+MAR,double_threshold,133,BMI,0.4,"['Age', 'Glucose']",0.9487179487179487
+MAR,range_condition,133,BMI,0.4,Age,0.7564102564102564
+MAR,nonlinear,133,BMI,0.4,Age,0.5773195876288659
+MCAR,none,133,BMI,0.4,,0.4581005586592179
+MAR,basic,133,BMI,0.5,Age,0.8181818181818182
+MAR,double_threshold,133,BMI,0.5,"['Age', 'Glucose']",0.9375
+MAR,range_condition,133,BMI,0.5,Age,0.8315789473684211
+MAR,nonlinear,133,BMI,0.5,Age,0.5714285714285714
+MCAR,none,133,BMI,0.5,,0.5315315315315315
+MAR,basic,133,BMI,0.6000000000000001,Age,0.7984496124031008
+MAR,double_threshold,133,BMI,0.6000000000000001,"['Age', 'Glucose']",0.9272727272727272
+MAR,range_condition,133,BMI,0.6000000000000001,Age,0.831858407079646
+MAR,nonlinear,133,BMI,0.6000000000000001,Age,0.6382978723404256
+MCAR,none,133,BMI,0.6000000000000001,,0.49206349206349204
+MAR,basic,133,BMI,0.7000000000000001,Age,0.881578947368421
+MAR,double_threshold,133,BMI,0.7000000000000001,"['Age', 'Glucose']",0.9692307692307692
+MAR,range_condition,133,BMI,0.7000000000000001,Age,0.8778625954198473
+MAR,nonlinear,133,BMI,0.7000000000000001,Age,0.6706586826347305
+MCAR,none,133,BMI,0.7000000000000001,,0.49295774647887325
+MAR,basic,133,BMI,0.8,Age,0.9162011173184358
+MAR,double_threshold,133,BMI,0.8,"['Age', 'Glucose']",0.9866666666666667
+MAR,range_condition,133,BMI,0.8,Age,0.9177215189873418
+MAR,nonlinear,133,BMI,0.8,Age,0.7346938775510204
+MCAR,none,133,BMI,0.8,,0.5368421052631579
+MAR,basic,133,BMI,0.9,Age,0.9656862745098039
+MAR,double_threshold,133,BMI,0.9,"['Age', 'Glucose']",0.9775280898876404
+MAR,range_condition,133,BMI,0.9,Age,0.9615384615384616
+MAR,nonlinear,133,BMI,0.9,Age,0.8177777777777778
+MCAR,none,133,BMI,0.9,,0.46511627906976744

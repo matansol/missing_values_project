@@ -1,3 +1,4 @@
+import kagglehub
 import pandas as pd
 
 
@@ -28,3 +29,22 @@ def get_housing_dataset():
 
     return df, 'SalePrice'
 
+def get_wine_dataset():
+    path = kagglehub.dataset_download("taweilo/wine-quality-dataset-balanced-classification")
+    wine_df = pd.read_csv(f"{path}/wine_data.csv")
+    return wine_df, 'quality'
+
+def get_diabetes_dataset():
+    path = kagglehub.dataset_download("uciml/pima-indians-diabetes-database")
+    df = pd.read_csv(f"{path}/diabetes.csv")
+    return df, 'Outcome'
+
+def get_dataset(ds_name):
+    if ds_name == 'wine':
+        return get_wine_dataset()
+    elif ds_name == 'housing':
+        return get_housing_dataset()
+    elif ds_name == 'diabetes':
+        return get_diabetes_dataset()
+    else:
+        raise ValueError(f"Unknown dataset: {ds_name}")
