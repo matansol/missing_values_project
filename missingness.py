@@ -47,13 +47,11 @@ def apply_mcar(data: pd.DataFrame,
     if random_state is not None:
         np.random.seed(random_state)
     mask = np.random.rand(len(data)) < missing_rate
-    data.loc[mask, target_feature] = np.nan
-    return data
+    return mask
 
 def apply_mar(data: pd.DataFrame, 
               target_feature: str,
               condition_feature: Union[str, List[str]],
-              missing_rate: float,
               random_state: int = None,
               strategy: Literal['basic', 'double_threshold', 'range_condition', 'nonlinear', 'logistic'] = 'basic',
               verbose=False):
@@ -75,8 +73,6 @@ def apply_mar(data: pd.DataFrame,
         random.seed(random_state)
     
     _print(verbose, f"[MAR] Using strategy: {strategy}")
-    features = list(data.columns)
-    possible_features = [f for f in features if f != target_feature]
     
     if strategy == 'basic':
         quantile = random.uniform(0.25, 0.75)
@@ -85,15 +81,13 @@ def apply_mar(data: pd.DataFrame,
         condition_indices = data.index[data[condition_feature] > threshold]
     
     elif strategy == 'double_threshold':
-        if len(possible_features) < 2:
-            # Fallback to basic if not enough features.
-            return apply_mar(data, target_feature, features, missing_rate, random_state=random_state, strategy='basic')
-        else:
-            cond_feat1, cond_feat2 = condition_feature
-            thresh1 = data[cond_feat1].quantile(random.uniform(0.3, 0.7))
-            thresh2 = data[cond_feat2].quantile(random.uniform(0.3, 0.7))
-            _print(verbose, f"[MAR - Double Threshold] Conditions: {cond_feat1} > {thresh1:.2f} and {cond_feat2} < {thresh2:.2f}")
-            condition_indices = data.index[(data[cond_feat1] > thresh1) & (data[cond_feat2] < thresh2)]
+        cond_feat1, cond_feat2 = condition_feature
+        quans = [random.uniform(0.25, 0.75) for _ in range(2)]
+        quan1, quan2 = min(quans), max(quans)
+        thresh1 = data[cond_feat1].quantile(quan1)
+        thresh2 = data[cond_feat2].quantile(quan2)
+        _print(verbose, f"[MAR - Double Threshold] Conditions: {cond_feat1} > {thresh1:.2f} and {cond_feat2} < {thresh2:.2f}")
+        condition_indices = data.index[(data[cond_feat1] >= thresh1) & (data[cond_feat2] <= thresh2)]
     
     elif strategy == 'range_condition':
         q_lower = random.uniform(0.2, 0.4)
@@ -108,70 +102,62 @@ def apply_mar(data: pd.DataFrame,
         _print(verbose, f"[MAR - Nonlinear] Condition: sin({condition_feature}) > {threshold:.2f}")
         condition_indices = data.index[np.sin(data[condition_feature]) > threshold]
     
-    elif strategy == 'logistic':
-        a = random.uniform(0.5, 3)
-        b = data[condition_feature].quantile(random.uniform(0.3, 0.7))
-        _print(verbose, f"[MAR - Logistic] Condition: {condition_feature} with logistic parameters a={a:.2f}, b={b:.2f}")
-        prob = 1 / (1 + np.exp(-a * (data[condition_feature] - b)))
-        missing_mask = np.random.rand(len(data)) < (missing_rate * prob)
-        data.loc[missing_mask, target_feature] = np.nan
-        return data
-    
     else:
         raise ValueError(f"Unknown MAR strategy: {strategy}")
-    
-    mask = np.random.rand(len(condition_indices)) < missing_rate
-    missing_indices = condition_indices[mask]
-    data.loc[missing_indices, target_feature] = np.nan
-    return data
+    return condition_indices
+    # mask = np.random.rand(len(condition_indices)) < missing_rate
+    # missing_indices = condition_indices[mask]
+    # return missing_indices
+    # data.loc[missing_indices, target_feature] = np.nan
+    # return data, missing_indices
 
-def apply_mnar(data: pd.DataFrame,
-               target_feature: str,
-               missing_rate: float,
-               random_state: int = None,
-               strategy: Literal['basic', 'logistic'] = 'basic',
-               verbose=False):
-    """
-    MNAR (Missing Not At Random):
-    Missingness depends on the feature's own values.
+# def apply_mnar(data: pd.DataFrame,
+#                target_feature: str,
+#                missing_rate: float,
+#                random_state: int = None,
+#                strategy: Literal['basic', 'logistic'] = 'basic',
+#                verbose=False):
+#     """
+#     MNAR (Missing Not At Random):
+#     Missingness depends on the feature's own values.
     
-    Parameters:
-      - data: DataFrame.
-      - target_feature: The column to induce missingness.
-      - missing_rate: Base probability with which to set values to missing.
-      - random_state: Seed for reproducibility.
-      - strategy: One of: 'basic', or 'logistic'
-    """
-    if random_state is not None:
-        np.random.seed(random_state)
-        random.seed(random_state)
+#     Parameters:
+#       - data: DataFrame.
+#       - target_feature: The column to induce missingness.
+#       - missing_rate: Base probability with which to set values to missing.
+#       - random_state: Seed for reproducibility.
+#       - strategy: One of: 'basic', or 'logistic'
+#     """
+#     if random_state is not None:
+#         np.random.seed(random_state)
+#         random.seed(random_state)
     
-    _print(verbose, f"[MNAR] Using strategy: {strategy}")
+#     _print(verbose, f"[MNAR] Using strategy: {strategy}")
     
-    if strategy == 'basic':
-        quantile = random.uniform(0.25, 0.75)
-        threshold = data[target_feature].quantile(quantile)
-        _print(verbose, f"[MNAR - Basic] For feature '{target_feature}', threshold: {threshold:.2f}")
-        condition_indices = data.index[data[target_feature] > threshold]
-        mask = np.random.rand(len(condition_indices)) < missing_rate
-        missing_indices = condition_indices[mask]
-        data.loc[missing_indices, target_feature] = np.nan
-        return data
+#     if strategy == 'basic':
+#         quantile = random.uniform(0.25, 0.75)
+#         threshold = data[target_feature].quantile(quantile)
+#         _print(verbose, f"[MNAR - Basic] For feature '{target_feature}', threshold: {threshold:.2f}")
+#         condition_indices = data.index[data[target_feature] > threshold]
+#         mask = np.random.rand(len(condition_indices)) < missing_rate
+#         missing_indices = condition_indices[mask]
+#         data.loc[missing_indices, target_feature] = np.nan
+#         return data
     
-    elif strategy == 'logistic':
-        a = random.uniform(0.5, 3)
-        b = data[target_feature].quantile(random.uniform(0.3, 0.7))
-        _print(verbose, f"[MNAR - Logistic] For feature '{target_feature}': logistic parameters a={a:.2f}, b={b:.2f}")
-        prob_missing = missing_rate * (1 / (1 + np.exp(-a * (data[target_feature] - b))))
-        prob_missing = np.clip(prob_missing, 0, 1)
-        missing_mask = np.random.rand(len(data)) < prob_missing
-        data.loc[missing_mask, target_feature] = np.nan
-        return data
+#     elif strategy == 'logistic':
+#         a = random.uniform(0.5, 3)
+#         b = data[target_feature].quantile(random.uniform(0.3, 0.7))
+#         _print(verbose, f"[MNAR - Logistic] For feature '{target_feature}': logistic parameters a={a:.2f}, b={b:.2f}")
+#         prob_missing = missing_rate * (1 / (1 + np.exp(-a * (data[target_feature] - b))))
+#         prob_missing = np.clip(prob_missing, 0, 1)
+#         missing_mask = np.random.rand(len(data)) < prob_missing
+#         data.loc[missing_mask, target_feature] = np.nan
+#         return data
     
-    else:
-        raise ValueError(f"Unknown MNAR strategy: {strategy}")
+#     else:
+#         raise ValueError(f"Unknown MNAR strategy: {strategy}")
 
-def apply_missingness(data, params: MissingnessParams, verbose=False):
+def apply_missingness(data, params: MissingnessParams, return_info=False, verbose=False):
     """
     Random Missingness Pipeline:
     Applies missingness to the DataFrame according to the parameters in `params`.
@@ -184,18 +170,33 @@ def apply_missingness(data, params: MissingnessParams, verbose=False):
           • random_state: Seed for reproducibility.
     """
     data = data.copy()
+    info_dict = {}
     
     if params.mechanism == 'MCAR':
-        data = apply_mcar(data, params.target_feature, params.missing_rate, random_state=params.random_state)
+        missing_indices = apply_mcar(data, params.target_feature, params.missing_rate, random_state=params.random_state)
+        info_dict['condition'] = data.index
     elif params.mechanism == 'MAR':
-        data = apply_mar(data, target_feature=params.target_feature, condition_feature=params.condition_feature,
-                         missing_rate=params.missing_rate, random_state=params.random_state, strategy=params.strategy, verbose=verbose)
-    elif params.mechanism == 'MNAR':
-        data = apply_mnar(data, params.target_feature, params.missing_rate, random_state=params.random_state, 
-                          strategy=params.strategy, verbose=verbose)
+        condition_indices = apply_mar(data, target_feature=params.target_feature, condition_feature=params.condition_feature,
+                            random_state=params.random_state, strategy=params.strategy, verbose=verbose)
+        missing_indices = data.iloc[condition_indices].index[(np.random.rand(len(data.iloc[condition_indices])) < params.missing_rate)]
+        info_dict['condition'] = data.iloc[condition_indices].index
+    # elif params.mechanism == 'MNAR':
+    #     condition_indices = apply_mnar(data, params.target_feature, params.missing_rate, random_state=params.random_state, 
+    #                       strategy=params.strategy, verbose=verbose)
     else:
         raise ValueError(f"Unknown mechanism: {params.mechanism}")
     
+    # cond, no_cond = data.loc[condition_indices], data.loc[~condition_indices]
+    # cond.reset_index(drop=True, inplace=True)
+    # no_cond.reset_index(drop=True, inplace=True)
+    
+    info_dict['missing'] = data.iloc[missing_indices].index
+    info_dict['original_values'] = data.loc[missing_indices, params.target_feature]
+    
+    data.loc[missing_indices, params.target_feature] = np.nan
+    
+    if return_info:
+        return data, info_dict
     return data
 
 class MissingnessParamsGenerator:
@@ -213,14 +214,14 @@ class MissingnessParamsGenerator:
     def __next__(self):
         if self.current_experiment >= self.n_experiments:
             raise StopIteration
-
-        mechanism = self.rng.choice(['MCAR', 'MAR', 'MNAR'])
+            
+        mechanism = self.rng.choice(['MCAR', 'MAR'])
         _print(self.verbose, f"\n[Generator] Chosen missingness mechanism: {mechanism}")
 
         if mechanism == 'MAR':
-            strategy = self.rng.choice(['basic', 'double_threshold', 'range_condition', 'nonlinear', 'logistic'])
-        elif mechanism == 'MNAR':
-            strategy = self.rng.choice(['basic', 'logistic'])
+            strategy = self.rng.choice(['basic', 'double_threshold', 'range_condition', 'nonlinear'])
+        # elif mechanism == 'MNAR':
+            # strategy = self.rng.choice(['basic', 'logistic'])
         else:
             strategy = "none"  # For MCAR, strategy is not used.
         _print(self.verbose, f"[Generator] Chosen strategy for missingness: {strategy}")
