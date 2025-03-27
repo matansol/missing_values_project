@@ -1,10 +1,11 @@
-import kagglehub
+import os
+import numpy as np
 import pandas as pd
 
+DATA_DIR = 'data'
 
 def get_housing_dataset():
-    house_value_train = 'input/house_pricing/train.csv'
-    df = pd.read_csv(house_value_train)
+    df = pd.read_csv(os.path.join(DATA_DIR, 'housing.csv'))
 
     # Keep only numerical columns
     numerical_cols = df.select_dtypes(include=['number']).columns
@@ -30,14 +31,28 @@ def get_housing_dataset():
     return df, 'SalePrice'
 
 def get_wine_dataset():
-    path = kagglehub.dataset_download("taweilo/wine-quality-dataset-balanced-classification")
-    wine_df = pd.read_csv(f"{path}/wine_data.csv")
+    wine_df = pd.read_csv(os.path.join(DATA_DIR,"wine.csv"))
     return wine_df, 'quality'
 
 def get_diabetes_dataset():
-    path = kagglehub.dataset_download("uciml/pima-indians-diabetes-database")
-    df = pd.read_csv(f"{path}/diabetes.csv")
+    df = pd.read_csv(os.path.join(DATA_DIR,"diabetes.csv"))
     return df, 'Outcome'
+
+def get_energy_dataset():
+    df = pd.read_csv(os.path.join(DATA_DIR,"energy.csv"))
+    df.drop(columns=['Building Type', 'Day of Week'], inplace=True)
+    return df, 'Energy Consumption'
+
+def get_random_dataset():
+    n = 1000
+    np.random.seed(None)
+    df = pd.DataFrame({
+        'a': np.random.rand(n),
+        'b': np.random.rand(n),
+        'c': np.random.rand(n),
+        'target': np.random.rand(n)
+    })
+    return df, 'target'
 
 def get_dataset(ds_name):
     if ds_name == 'wine':
@@ -46,5 +61,9 @@ def get_dataset(ds_name):
         return get_housing_dataset()
     elif ds_name == 'diabetes':
         return get_diabetes_dataset()
+    elif ds_name == 'energy':
+        return get_energy_dataset()
+    elif ds_name == 'random':
+        return get_random_dataset()
     else:
         raise ValueError(f"Unknown dataset: {ds_name}")

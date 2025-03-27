@@ -174,11 +174,12 @@ def apply_missingness(data, params: MissingnessParams, return_info=False, verbos
     
     if params.mechanism == 'MCAR':
         missing_indices = apply_mcar(data, params.target_feature, params.missing_rate, random_state=params.random_state)
+        info_dict['condition'] = data.index
     elif params.mechanism == 'MAR':
         condition_indices = apply_mar(data, target_feature=params.target_feature, condition_feature=params.condition_feature,
                             random_state=params.random_state, strategy=params.strategy, verbose=verbose)
         missing_indices = data.iloc[condition_indices].index[(np.random.rand(len(data.iloc[condition_indices])) < params.missing_rate)]
-        info_dict['no_condition'] = data.iloc[~condition_indices].index
+        info_dict['condition'] = data.iloc[condition_indices].index
     # elif params.mechanism == 'MNAR':
     #     condition_indices = apply_mnar(data, params.target_feature, params.missing_rate, random_state=params.random_state, 
     #                       strategy=params.strategy, verbose=verbose)
@@ -190,7 +191,6 @@ def apply_missingness(data, params: MissingnessParams, return_info=False, verbos
     # no_cond.reset_index(drop=True, inplace=True)
     
     info_dict['missing'] = data.iloc[missing_indices].index
-    info_dict['no_missing'] = data.iloc[~missing_indices].index
     info_dict['original_values'] = data.loc[missing_indices, params.target_feature]
     
     data.loc[missing_indices, params.target_feature] = np.nan
